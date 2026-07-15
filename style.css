@@ -2,6 +2,12 @@
    Stop The Truckery — Stylesheet
    ============================================ */
 
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ---------- Variables ---------- */
 :root {
     --bg: #0B0A0E;
