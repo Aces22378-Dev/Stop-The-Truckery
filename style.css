@@ -49,7 +49,7 @@ body {
 /* ---------- Banner ---------- */
 .hero {
     width: 100%;
-    height: 45vh;
+    aspect-ratio: 1920 / 480; /* banner's native ratio — height now scales exactly with width */
     background: #000;
     overflow: hidden;
     display: flex;
@@ -60,7 +60,7 @@ body {
 .hero img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover; /* container ratio matches the image ratio, so cover never actually crops anything */
 }
 
 /* ---------- Navigation ---------- */
@@ -534,10 +534,6 @@ footer {
 
     .logo {
         font-size: 22px;
-    }
-
-    .hero {
-        height: 35vh;
     }
 
     .stat-label {
