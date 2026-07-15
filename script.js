@@ -4,9 +4,8 @@
 
 let currentRarityFilter = "all";
 
+
 /* ---------- Badge Tier Data ---------- */
-/* Tier numbers/names come from the "Badge Tiers" table; each tier's gradient
-   is 2-3 stops used for that tier's highlight strip + glow color. */
 
 const BADGE_TIERS = [
     { n: 1, name: "Common",    colors: ["#6B7280", "#9CA3AF"] },
@@ -22,15 +21,129 @@ const BADGE_TIERS = [
     { n: 11, name: "Prismatic", colors: ["#EF4444", "#22C55E", "#3B82F6"] }
 ];
 
+
 function tierByNumber(n) {
     return BADGE_TIERS.find(t => t.n === n);
 }
 
-// Shorthand for the repetitive Garage/Crash/Money progression badges:
-// each entry is [tier number, icon url, requirement text].
-function progressionBadges(entries) {
-    return entries.map(([tier, img, desc]) => ({ name: tierByNumber(tier).name, tier, img, desc }));
+
+
+/* ---------- Vehicle Tier System ---------- */
+
+const VEHICLE_TIERS = {
+
+    common: 1,
+
+    uncommon: 3,
+
+    rare: 4,
+
+    epic: 6,
+
+    legendary: 8
+
+};
+
+
+
+function applyVehicleTiers() {
+
+    document
+    .querySelectorAll("#vehicleGrid .tier-card")
+    .forEach(card => {
+
+
+        const rarity = card.dataset.rarity;
+
+
+        // Allows individual vehicle overrides
+        const tierNumber =
+            card.dataset.tier ||
+            VEHICLE_TIERS[rarity];
+
+
+        const tier =
+            tierByNumber(Number(tierNumber));
+
+
+        if (!tier) return;
+
+
+
+        const gradient =
+            `linear-gradient(90deg, ${tier.colors.join(", ")})`;
+
+
+        const highlight =
+            tier.colors[tier.colors.length - 1];
+
+
+
+        card.style.setProperty(
+            "--tier-gradient",
+            gradient
+        );
+
+
+        card.style.setProperty(
+            "--tier-highlight",
+            highlight
+        );
+
+
+
+        const tag =
+            card.querySelector(".rarity-tag");
+
+
+        if(tag){
+
+            tag.textContent =
+            `Tier ${tier.n} • ${tier.name}`;
+
+        }
+
+
+
+        if(!card.querySelector(".tier-strip")){
+
+            const strip =
+            document.createElement("div");
+
+
+            strip.className =
+            "tier-strip";
+
+
+            card.prepend(strip);
+
+        }
+
+
+    });
+
 }
+
+
+
+
+
+/* ---------- Badge Helpers ---------- */
+
+
+function progressionBadges(entries){
+
+    return entries.map(
+        ([tier,img,desc]) => ({
+            name:tierByNumber(tier).name,
+            tier,
+            img,
+            desc
+        })
+    );
+
+}
+/* ---------- Badge Data ---------- */
 
 const GARAGE_ENTRIES = [
     [1, "https://i.postimg.cc/PPvK6zcK/1.png", "Own 1 vehicle."],
@@ -46,6 +159,7 @@ const GARAGE_ENTRIES = [
     [11, "https://i.postimg.cc/SJYVZ75d/11.png", "Own every vehicle."]
 ];
 
+
 const CRASH_ENTRIES = [
     [1, "https://i.postimg.cc/McLvrRgy/1.png", "Cause 100 crashes."],
     [2, "https://i.postimg.cc/CZ2z6D9s/2.png", "Cause 1K crashes."],
@@ -59,6 +173,7 @@ const CRASH_ENTRIES = [
     [10, "https://i.postimg.cc/ygSkqxzX/10.png", "Cause 100B crashes."],
     [11, "https://i.postimg.cc/5YF6cyM5/11.png", "Cause 1T crashes."]
 ];
+
 
 const MONEY_ENTRIES = [
     [1, "https://i.postimg.cc/tnjRLzks/1.png", "Reach 1M coins."],
@@ -74,214 +189,340 @@ const MONEY_ENTRIES = [
     [11, "https://i.postimg.cc/fSfWZ0qd/11.png", "Reach 1Cg coins."]
 ];
 
+
+
 const BADGE_CATEGORIES = [
+
     {
-        key: "staff",
-        label: "Staff Badges",
-        badges: [
-            { name: "Developer", tier: 11, img: "https://i.postimg.cc/Czy7ZnPs/61.png", desc: "Help develop Stop The Truckery." },
-            { name: "Moderator", tier: 9, img: "https://i.postimg.cc/7fv9CJsN/62.png", desc: "Become an official moderator." },
-            { name: "Admin", tier: 10, img: "https://i.postimg.cc/N5hDy2J4/63.png", desc: "Become a game administrator." },
-            { name: "Owner", tier: 11, img: "https://i.postimg.cc/F7tpfkWp/64.png", desc: "Awarded to the owner of Stop The Truckery." }
-        ]
+        key:"garage",
+        label:"Garage Badges",
+        badges:progressionBadges(GARAGE_ENTRIES)
     },
+
     {
-        key: "community",
-        label: "Community Badges",
-        badges: [
-            { name: "Early Player", tier: 8, img: "https://i.postimg.cc/mtxjc1Xd/54.png", desc: "Play during Version 1.20 or earlier." },
-            { name: "Content Creator", tier: 7, img: "https://i.postimg.cc/PPGyLv3N/55.png", desc: "Create content featuring the game." },
-            { name: "QA Tester", tier: 8, img: "https://i.postimg.cc/kBrsVR1K/56.png", desc: "Test updates before release and report bugs." },
-            { name: "Verified", tier: 6, img: "https://i.postimg.cc/Tp80y57n/57.png", desc: "Become a verified community member." },
-            { name: "Played With Staff", tier: 4, img: "https://i.postimg.cc/w7K2tRf5/58.png", desc: "Join a server with a staff member." },
-            { name: "Gifter", tier: 3, img: "https://i.postimg.cc/BXWp8PYT/59.png", desc: "Gift another player." }
-        ]
+        key:"crash",
+        label:"Crash Badges",
+        badges:progressionBadges(CRASH_ENTRIES)
     },
+
     {
-        key: "leaderboard",
-        label: "Leaderboard Badges",
-        badges: [
-            { name: "#1 Leaderboard", tier: 11, img: "https://i.postimg.cc/9rLGdxcM/41.png", desc: "Reach #1 on the global leaderboard." },
-            { name: "#2 Leaderboard", tier: 10, img: "https://i.postimg.cc/7fKg3BqL/40.png", desc: "Reach #2 on the global leaderboard." },
-            { name: "#3 Leaderboard", tier: 9, img: "https://i.postimg.cc/56swBPfN/39.png", desc: "Reach #3 on the global leaderboard." }
-        ]
-    },
-    { key: "garage", label: "Garage Badges", badges: progressionBadges(GARAGE_ENTRIES) },
-    { key: "crash", label: "Crash Badges", badges: progressionBadges(CRASH_ENTRIES) },
-    { key: "money", label: "Money Badges", badges: progressionBadges(MONEY_ENTRIES) }
+        key:"money",
+        label:"Money Badges",
+        badges:progressionBadges(MONEY_ENTRIES)
+    }
+
 ];
 
-/* ---------- Badge + Tier Rendering ---------- */
 
-function createChip(label, catKey, isActive, onSelect) {
-    const chip = document.createElement("div");
-    chip.className = "chip" + (isActive ? " active" : "");
-    chip.dataset.cat = catKey;
-    chip.textContent = label;
-    chip.addEventListener("click", () => onSelect(catKey, chip));
-    return chip;
-}
 
-function createBadgeCard(badge, catKey) {
-    const tier = tierByNumber(badge.tier);
-    const gradient = `linear-gradient(90deg, ${tier.colors.join(", ")})`;
-    const highlight = tier.colors[tier.colors.length - 1];
+/* ---------- Rendering ---------- */
 
-    const card = document.createElement("div");
-    card.className = "badge-card glass tier-card";
-    card.dataset.cat = catKey;
-    card.style.setProperty("--tier-gradient", gradient);
-    card.style.setProperty("--tier-highlight", highlight);
+
+function createBadgeCard(badge, catKey){
+
+    const tier =
+    tierByNumber(badge.tier);
+
+
+    const card =
+    document.createElement("div");
+
+
+    card.className =
+    "badge-card glass tier-card";
+
+
+    card.dataset.cat =
+    catKey;
+
+
+    card.style.setProperty(
+        "--tier-gradient",
+        `linear-gradient(90deg, ${tier.colors.join(", ")})`
+    );
+
+
+    card.style.setProperty(
+        "--tier-highlight",
+        tier.colors[tier.colors.length-1]
+    );
+
 
     card.innerHTML = `
+
         <div class="tier-strip"></div>
-        ${badge.img ? `<img class="badge-icon" src="${badge.img}" alt="${badge.name} badge">` : ""}
+
+        <img class="badge-icon" src="${badge.img}">
+
         <h3>${badge.name}</h3>
-        <span class="tier-tag" style="color:${highlight}">Tier ${tier.n} &bull; ${tier.name}</span>
+
+        <span class="tier-tag">
+        Tier ${tier.n} • ${tier.name}
+        </span>
+
         <p>${badge.desc}</p>
+
     `;
+
+
     return card;
+
 }
 
-function renderBadges() {
-    const chips = document.getElementById("badgeChips");
-    const categories = document.getElementById("badgeCategories");
-    chips.innerHTML = "";
-    categories.innerHTML = "";
 
-    chips.appendChild(createChip("All", "all", true, setBadgeFilter));
 
-    BADGE_CATEGORIES.forEach(cat => {
-        chips.appendChild(createChip(cat.label, cat.key, false, setBadgeFilter));
+function renderBadges(){
 
-        const heading = document.createElement("div");
-        heading.className = "badge-category";
-        heading.dataset.cat = cat.key;
-        heading.innerHTML = `<h3>${cat.label}</h3>`;
-        categories.appendChild(heading);
+    const container =
+    document.getElementById("badgeCategories");
 
-        const grid = document.createElement("div");
-        grid.className = "badge-grid";
-        cat.badges.forEach(badge => grid.appendChild(createBadgeCard(badge, cat.key)));
-        categories.appendChild(grid);
+
+    const chips =
+    document.getElementById("badgeChips");
+
+
+    if(!container || !chips) return;
+
+
+    container.innerHTML="";
+    chips.innerHTML="";
+
+
+    BADGE_CATEGORIES.forEach(cat=>{
+
+
+        const title =
+        document.createElement("h3");
+
+
+        title.textContent =
+        cat.label;
+
+
+        container.appendChild(title);
+
+
+
+        const grid =
+        document.createElement("div");
+
+
+        grid.className =
+        "badge-grid";
+
+
+
+        cat.badges.forEach(
+            badge=>{
+                grid.appendChild(
+                    createBadgeCard(
+                        badge,
+                        cat.key
+                    )
+                );
+            }
+        );
+
+
+        container.appendChild(grid);
+
     });
+
 }
 
-function renderTiers() {
-    const grid = document.getElementById("tiersGrid");
-    grid.innerHTML = "";
 
-    BADGE_TIERS.forEach(tier => {
-        const gradient = `linear-gradient(90deg, ${tier.colors.join(", ")})`;
-        const highlight = tier.colors[tier.colors.length - 1];
 
-        const card = document.createElement("div");
-        card.className = "badge-card glass tier-card tier-showcase";
-        card.style.setProperty("--tier-gradient", gradient);
-        card.style.setProperty("--tier-highlight", highlight);
-        card.innerHTML = `
-            <div class="tier-strip"></div>
-            <h3>${tier.name}</h3>
-            <span class="tier-tag" style="color:${highlight}">Tier ${tier.n}</span>
+
+
+function renderTiers(){
+
+    const grid =
+    document.getElementById("tiersGrid");
+
+
+    if(!grid) return;
+
+
+    grid.innerHTML="";
+
+
+    BADGE_TIERS.forEach(tier=>{
+
+
+        const card =
+        document.createElement("div");
+
+
+        card.className =
+        "badge-card glass tier-card";
+
+
+        card.style.setProperty(
+            "--tier-gradient",
+            `linear-gradient(90deg, ${tier.colors.join(", ")})`
+        );
+
+
+        card.style.setProperty(
+            "--tier-highlight",
+            tier.colors[tier.colors.length-1]
+        );
+
+
+        card.innerHTML=`
+
+        <div class="tier-strip"></div>
+
+        <h3>${tier.name}</h3>
+
+        <span class="tier-tag">
+        Tier ${tier.n}
+        </span>
+
         `;
+
+
         grid.appendChild(card);
+
     });
+
 }
 
-/* ---------- Page Navigation ---------- */
 
-function showPage(page, tab) {
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
 
-    const next = document.getElementById(page);
-    if (next) next.classList.add("active");
+/* ---------- Navigation ---------- */
+
+
+function showPage(page,tab){
+
+    document.querySelectorAll(".page")
+    .forEach(p=>p.classList.remove("active"));
+
+
+    document.querySelectorAll(".tab")
+    .forEach(t=>t.classList.remove("active"));
+
+
+    document.getElementById(page)
+    .classList.add("active");
+
 
     tab.classList.add("active");
 
-    if (page === "vehicles") {
+
+    if(page==="vehicles"){
         animateStatBars();
     }
+
 }
 
-/* ---------- Vehicle Stat Bars ---------- */
 
-function animateStatBars() {
-    const fills = document.querySelectorAll("#vehicleGrid .stat-fill");
 
-    fills.forEach(fill => {
-        // reset then animate on the next frame so the transition actually plays
-        fill.style.width = "0%";
+/* ---------- Vehicle Bars ---------- */
 
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                const target = parseFloat(fill.getAttribute("data-target")) || 0;
-                const visibleWidth = Math.max(target, 4); // keep a visible sliver even at the floor of the range
-                fill.style.width = visibleWidth + "%";
-            });
+
+function animateStatBars(){
+
+    document.querySelectorAll(".stat-fill")
+    .forEach(fill=>{
+
+
+        fill.style.width="0%";
+
+
+        requestAnimationFrame(()=>{
+
+            const value =
+            fill.dataset.target || 0;
+
+
+            fill.style.width =
+            Math.max(value,4)+"%";
+
         });
-    });
-}
 
-/* ---------- Vehicle Search + Rarity Filter ---------- */
 
-function filterVehicles() {
-    const query = document.getElementById("vehicleSearch").value.trim().toLowerCase();
-    const cards = document.querySelectorAll("#vehicleGrid .card");
-    let visibleCount = 0;
-
-    cards.forEach(card => {
-        const name = card.getAttribute("data-name") || "";
-        const rarity = card.getAttribute("data-rarity") || "";
-        const matchesName = name.includes(query);
-        const matchesRarity = currentRarityFilter === "all" || rarity === currentRarityFilter;
-
-        card.classList.toggle("hidden-card", !(matchesName && matchesRarity));
-        if (matchesName && matchesRarity) visibleCount++;
     });
 
-    document.getElementById("noResults").style.display = visibleCount === 0 ? "block" : "none";
 }
 
-function setRarityFilter(rarity, chip) {
-    currentRarityFilter = rarity;
-    document.querySelectorAll("#rarityChips .chip").forEach(c => c.classList.remove("active"));
+
+
+/* ---------- Vehicle Search ---------- */
+
+
+function filterVehicles(){
+
+    const query =
+    document.getElementById("vehicleSearch")
+    .value
+    .toLowerCase();
+
+
+    document.querySelectorAll("#vehicleGrid .card")
+    .forEach(card=>{
+
+
+        const name =
+        card.dataset.name;
+
+
+        const rarity =
+        card.dataset.rarity;
+
+
+        const show =
+        name.includes(query) &&
+        (
+            currentRarityFilter==="all" ||
+            rarity===currentRarityFilter
+        );
+
+
+        card.classList.toggle(
+            "hidden-card",
+            !show
+        );
+
+
+    });
+
+}
+
+
+
+function setRarityFilter(rarity,chip){
+
+    currentRarityFilter =
+    rarity;
+
+
+    document.querySelectorAll("#rarityChips .chip")
+    .forEach(c=>c.classList.remove("active"));
+
+
     chip.classList.add("active");
+
+
     filterVehicles();
+
 }
 
-/* ---------- Badge Category Filter ---------- */
 
-function setBadgeFilter(category, chip) {
-    document.querySelectorAll("#badgeChips .chip").forEach(c => c.classList.remove("active"));
-    chip.classList.add("active");
 
-    document.querySelectorAll(".badge-category").forEach(section => {
-        const sectionCat = section.getAttribute("data-cat");
-        section.classList.toggle("hidden-card", category !== "all" && sectionCat !== category);
-    });
+/* ---------- Start ---------- */
 
-    document.querySelectorAll(".badge-card").forEach(card => {
-        const cardCat = card.getAttribute("data-cat");
-        card.classList.toggle("hidden-card", category !== "all" && cardCat !== category);
-    });
 
-    // hide the grid wrapper too when every card inside it is filtered out
-    document.querySelectorAll(".badge-grid").forEach(grid => {
-        const anyVisible = Array.from(grid.querySelectorAll(".badge-card"))
-            .some(c => !c.classList.contains("hidden-card"));
-        grid.classList.toggle("hidden-card", !anyVisible);
-    });
-}
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
 
-/* ---------- Init ---------- */
 
-document.addEventListener("DOMContentLoaded", () => {
     renderBadges();
+
     renderTiers();
 
-    const activePage = document.querySelector(".page.active");
-    if (activePage && activePage.id === "vehicles") {
-        animateStatBars();
-    }
+    applyVehicleTiers();
+
+
 });
