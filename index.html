@@ -1,351 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Stop The Truckery</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stop The Truckery</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+  <header class="hero">
+    <img src="https://i.ibb.co/M5Vz8QVT/STT-Banner.png" alt="">
+  </header>
 
-<!-- Banner -->
-<header class="hero">
-    <img src="https://i.ibb.co/M5Vz8QVT/STT-Banner.png" alt="Stop The Truckery Banner">
-</header>
-
-
-
-<!-- Navigation -->
-<nav>
-
-<div class="nav-container">
-
-    <div class="logo">
-        Stop The Truckery
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Stop The Truckery</div>
+      <div class="nav-links">
+        <div class="tab active" onclick="showPage('home', this)">Home</div>
+        <div class="tab" onclick="showPage('vehicles', this)">Vehicles</div>
+        <div class="tab" onclick="showPage('badges', this)">Badges</div>
+        <div class="tab" onclick="showPage('updates', this)">Updates</div>
+        <div class="tab" onclick="showPage('credits', this)">Credits</div>
+      </div>
     </div>
-
-
-    <div class="nav-links">
-
-        <div class="tab active" onclick="showPage('home',this)">Home</div>
-        <div class="tab" onclick="showPage('cars',this)">Cars</div>
-        <div class="tab" onclick="showPage('badges',this)">Badges</div>
-        <div class="tab" onclick="showPage('updates',this)">Updates</div>
-        <div class="tab" onclick="showPage('credits',this)">Credits</div>
-
-    </div>
-
-</div>
-
-</nav>
-
-
-<main>
-
-<section id="home" class="page active">
-
-<h1>Welcome to Stop The Truckery</h1>
-
-<p>
-Stop The Truckery is a competitive PvP vehicle combat game where players
-battle inside contained arenas using powerful and unique vehicles. Crash
-into opponents to earn coins, unlock new cars, collect badges, and climb
-the leaderboard. Every vehicle has different strengths, allowing players
-to choose their own playstyle and strategy. Stay in your vehicle, survive
-the chaos, and become the best driver in Stop The Truckery.
-</p>
-
-</section>
-
-  
-</section>
-<section id="cars" class="page">
-
-<h2>Cars</h2>
-
-<div class="cards">
-
-<div class="card"><h3>Hatchback</h3><p>Speed: 100%<br>Coins on crash: 100%<br><br>Starter Car</p></div>
-
-<div class="card"><h3>Sedan</h3><p>Speed: 105%<br>Coins on crash: 100%<br><br>Buy - 480 Coins</p></div>
-
-<div class="card"><h3>Taxi</h3><p>Speed: 100%<br>Coins on crash: 115%<br><br>Buy - 540 Coins</p></div>
-
-<div class="card"><h3>Van</h3><p>Speed: 90%<br>Coins on crash: 130%<br><br>Buy - 660 Coins</p></div>
-
-<div class="card"><h3>SUV</h3><p>Speed: 105%<br>Coins on crash: 115%<br><br>Buy - 900 Coins</p></div>
-
-<div class="card"><h3>Pickup</h3><p>Speed: 110%<br>Coins on crash: 120%<br><br>Buy - 960 Coins</p></div>
-
-<div class="card"><h3>Limousine</h3><p>Speed: 95%<br>Coins on crash: 140%<br><br>Buy - 1200 Coins</p></div>
-
-<div class="card"><h3>Police Sedan</h3><p>Speed: 115%<br>Coins on crash: 110%<br><br>Buy - 1320 Coins</p></div>
-
-<div class="card"><h3>Police SUV</h3><p>Speed: 110%<br>Coins on crash: 120%<br><br>Buy - 1500 Coins</p></div>
-
-<div class="card"><h3>Ambulance</h3><p>Speed: 100%<br>Coins on crash: 135%<br><br>Buy - 1680 Coins</p></div>
-
-<div class="card"><h3>Firetruck</h3><p>Speed: 85%<br>Coins on crash: 150%<br><br>Buy - 1920 Coins</p></div>
-
-<div class="card"><h3>Muscle</h3><p>Speed: 125%<br>Coins on crash: 100%<br><br>Buy - 2100 Coins</p></div>
-
-<div class="card"><h3>Muscle 2</h3><p>Speed: 130%<br>Coins on crash: 100%<br><br>Buy - 2280 Coins</p></div>
-
-<div class="card"><h3>Police Muscle</h3><p>Speed: 130%<br>Coins on crash: 115%<br><br>Buy - 2520 Coins</p></div>
-
-<div class="card"><h3>Sports</h3><p>Speed: 140%<br>Coins on crash: 90%<br><br>Buy - 2700 Coins</p></div>
-
-<div class="card"><h3>Police Sports</h3><p>Speed: 140%<br>Coins on crash: 100%<br><br>Buy - 2880 Coins</p></div>
-
-<div class="card"><h3>Roadster</h3><p>Speed: 145%<br>Coins on crash: 85%<br><br>Buy - 3000 Coins</p></div>
-
-<div class="card"><h3>Truck</h3><p>Speed: 75%<br>Coins on crash: 160%<br><br>Buy - 3300 Coins</p></div>
-
-<div class="card"><h3>Monster Truck</h3><p>Speed: 80%<br>Coins on crash: 180%<br><br>Buy - 3900 Coins</p></div>
-
-<div class="card"><h3>Bus</h3><p>Speed: 65%<br>Coins on crash: 200%<br><br>Buy - 4500 Coins</p></div>
-
-<div class="card"><h3>Truck + Trailer</h3><p>Speed: 60%<br>Coins on crash: 220%<br><br>Buy - 5400 Coins</p></div>
-
-</div>
-
-</section>
-<section id="badges" class="page">
-
-<h2>Badges</h2>
-
-<div class="badge-grid">
-
-
-<div class="badge-category">
-<h3>Staff Badges</h3>
-</div>
-
-
-<div class="badge-card">
-<h3>Developer</h3>
-<p>Helped create and develop the game.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Moderator</h3>
-<p>Helps manage the community.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Admin</h3>
-<p>Official game administrator.</p>
-</div>
-
-
-
-<div class="badge-category">
-<h3>Game Badges</h3>
-</div>
-
-
-<div class="badge-card">
-<h3>QA Tester</h3>
-<p>Tests updates and features before release.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Content Creator</h3>
-<p>Makes content featuring Stop The Truckery.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Verified</h3>
-<p>Verified member of the community.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Played With Staff</h3>
-<p>Played a match with a staff member.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Gifter</h3>
-<p>Supports other players through gifts.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Car Collector</h3>
-<p>Own every vehicle in the game.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Rich</h3>
-<p>Reach 1,000,000 or more coins.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>Early Player</h3>
-<p>Played during Version 1.20.</p>
-</div>
-
-
-
-<div class="badge-category">
-<h3>Leaderboard Badges</h3>
-</div>
-
-
-<div class="badge-card">
-<h3>#1 Leaderboard</h3>
-<p>Reached the first leaderboard position.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>#2 Leaderboard</h3>
-<p>Reached the second leaderboard position.</p>
-</div>
-
-
-<div class="badge-card">
-<h3>#3 Leaderboard</h3>
-<p>Reached the third leaderboard position.</p>
-</div>
-
-
-</div>
-
-</section>
-
-
-
-
-
-<section id="updates" class="page">
-
-<h2>Updates</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Development Updates</h3>
-
-<p>
-New cars, maps, badges, balancing changes, and gameplay improvements
-will be added during development.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-<section id="credits" class="page">
-
-<h2>Credits</h2>
-
-<div class="credits-grid">
-
-
-<div class="credit-card featured">
-
-<h3>Aces (@Aces22378)</h3>
-
-<p class="credit-role">
-Lead Developer
-</p>
-
-<p>
-Scripter<br>
-Modeler<br>
-Sound<br>
-Music<br>
-VFX<br>
-GFX<br>
-UI
-</p>
-
-</div>
-
-
-
-<div class="credit-card">
-
-<h3>Saberwave1938 (@saberwave1938_93132)</h3>
-
-<p class="credit-role">
-Developer
-</p>
-
-<p>
-Scripter
-</p>
-
-</div>
-
-
-
-<div class="credit-card">
-
-<h3>Assets</h3>
-
-<p class="credit-role">
-Design & Resources
-</p>
-
-<p>
-Original branding, UI, artwork, and game assets created for
-Stop The Truckery.
-</p>
-
-</div>
-
-
-
-<div class="credit-card">
-
-<h3>Special Thanks</h3>
-
-<p class="credit-role">
-Community
-</p>
-
-<p>
-Thanks to everyone who supports, tests, and plays the game.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-</main>
-
-
-<footer>
-© 2026 Stop The Truckery
-</footer>
-
-
-<script src="script.js"></script>
-
+  </nav>
+
+  <main>
+
+    <!-- ===================== HOME ===================== -->
+    <section id="home" class="page active">
+      <h1>Welcome to Stop The Truckery</h1>
+      <p>Stop The Truckery is a competitive PvP vehicle combat game where you crash into opponents, earn coins, unlock vehicles, collect badges, and climb the leaderboard.</p>
+    </section>
+
+    <!-- ===================== VEHICLES ===================== -->
+    <section id="vehicles" class="page">
+      <h2>Vehicles</h2>
+
+      <div class="toolbar">
+        <input type="text" id="vehicleSearch" class="search-input" placeholder="Search vehicles..." oninput="filterVehicles()">
+        <div class="filter-chips" id="rarityChips">
+          <div class="chip active" data-rarity="all" onclick="setRarityFilter('all', this)">All</div>
+          <div class="chip rarity-common" data-rarity="common" onclick="setRarityFilter('common', this)">Common</div>
+          <div class="chip rarity-uncommon" data-rarity="uncommon" onclick="setRarityFilter('uncommon', this)">Uncommon</div>
+          <div class="chip rarity-rare" data-rarity="rare" onclick="setRarityFilter('rare', this)">Rare</div>
+          <div class="chip rarity-epic" data-rarity="epic" onclick="setRarityFilter('epic', this)">Epic</div>
+          <div class="chip rarity-legendary" data-rarity="legendary" onclick="setRarityFilter('legendary', this)">Legendary</div>
+        </div>
+      </div>
+
+      <div class="cards" id="vehicleGrid">
+
+        <!-- Common -->
+        <div class="card glass rarity-common" data-rarity="common" data-name="hatchback">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Hatchback</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="47"></div></div><span class="stat-value">100%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
+          <p class="price">Price: Free</p>
+        </div>
+
+        <div class="card glass rarity-common" data-rarity="common" data-name="sedan">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Sedan</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="53"></div></div><span class="stat-value">105%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
+          <p class="price">Price: 500 Coins</p>
+        </div>
+
+        <div class="card glass rarity-common" data-rarity="common" data-name="taxi">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Taxi</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="47"></div></div><span class="stat-value">100%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="22"></div></div><span class="stat-value">115%</span></div>
+          <p class="price">Price: 650 Coins</p>
+        </div>
+
+        <div class="card glass rarity-common" data-rarity="common" data-name="van">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Van</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="35"></div></div><span class="stat-value">90%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="33"></div></div><span class="stat-value">130%</span></div>
+          <p class="price">Price: 850 Coins</p>
+        </div>
+
+        <div class="card glass rarity-common" data-rarity="common" data-name="suv">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>SUV</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="53"></div></div><span class="stat-value">105%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="22"></div></div><span class="stat-value">115%</span></div>
+          <p class="price">Price: 1,150 Coins</p>
+        </div>
+
+        <!-- Uncommon -->
+        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="pickup">
+          <span class="rarity-tag rarity-uncommon">Uncommon</span>
+          <h3>Pickup</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="59"></div></div><span class="stat-value">110%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="26"></div></div><span class="stat-value">120%</span></div>
+          <p class="price">Price: 1,500 Coins</p>
+        </div>
+
+        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="limousine">
+          <span class="rarity-tag rarity-uncommon">Uncommon</span>
+          <h3>Limousine</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="41"></div></div><span class="stat-value">95%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="41"></div></div><span class="stat-value">140%</span></div>
+          <p class="price">Price: 1,900 Coins</p>
+        </div>
+
+        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="police sedan">
+          <span class="rarity-tag rarity-uncommon">Uncommon</span>
+          <h3>Police Sedan</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="65"></div></div><span class="stat-value">115%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="19"></div></div><span class="stat-value">110%</span></div>
+          <p class="price">Price: 2,400 Coins</p>
+        </div>
+
+        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="police suv">
+          <span class="rarity-tag rarity-uncommon">Uncommon</span>
+          <h3>Police SUV</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="59"></div></div><span class="stat-value">110%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="26"></div></div><span class="stat-value">120%</span></div>
+          <p class="price">Price: 3,000 Coins</p>
+        </div>
+
+        <!-- Rare -->
+        <div class="card glass rarity-rare" data-rarity="rare" data-name="ambulance">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Ambulance</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="47"></div></div><span class="stat-value">100%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="37"></div></div><span class="stat-value">135%</span></div>
+          <p class="price">Price: 3,700 Coins</p>
+        </div>
+
+        <div class="card glass rarity-rare" data-rarity="rare" data-name="firetruck">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Firetruck</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="29"></div></div><span class="stat-value">85%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="48"></div></div><span class="stat-value">150%</span></div>
+          <p class="price">Price: 4,600 Coins</p>
+        </div>
+
+        <div class="card glass rarity-rare" data-rarity="rare" data-name="muscle">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Muscle</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="76"></div></div><span class="stat-value">125%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
+          <p class="price">Price: 5,600 Coins</p>
+        </div>
+
+        <div class="card glass rarity-rare" data-rarity="rare" data-name="muscle 2">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Muscle 2</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="82"></div></div><span class="stat-value">130%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
+          <p class="price">Price: 6,800 Coins</p>
+        </div>
+
+        <!-- Epic -->
+        <div class="card glass rarity-epic" data-rarity="epic" data-name="police muscle">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Police Muscle</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="82"></div></div><span class="stat-value">130%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="22"></div></div><span class="stat-value">115%</span></div>
+          <p class="price">Price: 8,200 Coins</p>
+        </div>
+
+        <div class="card glass rarity-epic" data-rarity="epic" data-name="sports">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Sports</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="94"></div></div><span class="stat-value">140%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="4"></div></div><span class="stat-value">90%</span></div>
+          <p class="price">Price: 9,800 Coins</p>
+        </div>
+
+        <div class="card glass rarity-epic" data-rarity="epic" data-name="police sports">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Police Sports</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="94"></div></div><span class="stat-value">140%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
+          <p class="price">Price: 11,700 Coins</p>
+        </div>
+
+        <div class="card glass rarity-epic" data-rarity="epic" data-name="roadster">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Roadster</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="100"></div></div><span class="stat-value">145%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">85%</span></div>
+          <p class="price">Price: 13,900 Coins</p>
+        </div>
+
+        <!-- Legendary -->
+        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="truck">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Truck</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="18"></div></div><span class="stat-value">75%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="56"></div></div><span class="stat-value">160%</span></div>
+          <p class="price">Price: 16,500 Coins</p>
+        </div>
+
+        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="monster truck">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Monster Truck</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="24"></div></div><span class="stat-value">80%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="70"></div></div><span class="stat-value">180%</span></div>
+          <p class="price">Price: 19,500 Coins</p>
+        </div>
+
+        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="bus">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Bus</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="6"></div></div><span class="stat-value">65%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="85"></div></div><span class="stat-value">200%</span></div>
+          <p class="price">Price: 23,000 Coins</p>
+        </div>
+
+        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="truck + trailer">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Truck + Trailer</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">60%</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="100"></div></div><span class="stat-value">220%</span></div>
+          <p class="price">Price: 28,000 Coins</p>
+        </div>
+
+      </div>
+
+      <p id="noResults" class="no-results" style="display:none;">No vehicles match your search.</p>
+    </section>
+
+    <!-- ===================== BADGES ===================== -->
+    <section id="badges" class="page">
+      <h2>Badges</h2>
+
+      <div class="filter-chips" id="badgeChips">
+        <div class="chip active" data-cat="all" onclick="setBadgeFilter('all', this)">All</div>
+        <div class="chip" data-cat="staff" onclick="setBadgeFilter('staff', this)">Staff Badges</div>
+        <div class="chip" data-cat="game" onclick="setBadgeFilter('game', this)">Game Badges</div>
+        <div class="chip" data-cat="leaderboard" onclick="setBadgeFilter('leaderboard', this)">Leaderboard Badges</div>
+      </div>
+
+      <div class="badge-category" data-cat="staff"><h3>Staff Badges</h3></div>
+      <div class="badge-grid">
+        <div class="badge-card glass" data-cat="staff"><h3>Developer</h3><p class="obtainable">OBTAINABLE</p><p>Helped develop Stop The Truckery.</p></div>
+        <div class="badge-card glass" data-cat="staff"><h3>Moderator</h3><p class="obtainable">OBTAINABLE</p><p>Awarded to official moderators.</p></div>
+        <div class="badge-card glass" data-cat="staff"><h3>Admin</h3><p class="obtainable">OBTAINABLE</p><p>Awarded to game administrators.</p></div>
+      </div>
+
+      <div class="badge-category" data-cat="game"><h3>Game Badges</h3></div>
+      <div class="badge-grid">
+        <div class="badge-card glass" data-cat="game"><h3>QA Tester</h3><p class="obtainable">OBTAINABLE</p><p>Help test updates before release and find bugs.</p></div>
+        <div class="badge-card glass" data-cat="game"><h3>Content Creator</h3><p class="obtainable">OBTAINABLE</p><p>Create content featuring the game.</p></div>
+        <div class="badge-card glass" data-cat="game"><h3>Verified</h3><p class="obtainable">OBTAINABLE</p><p>Become a verified community member.</p></div>
+        <div class="badge-card glass" data-cat="game"><h3>Played With Staff</h3><p class="obtainable">OBTAINABLE</p><p>Play in a server with a staff member.</p></div>
+        <div class="badge-card glass" data-cat="game"><h3>Gifter</h3><p class="obtainable">OBTAINABLE</p><p>Gift another player.</p></div>
+        <div class="badge-card glass" data-cat="game"><h3>Car Collector</h3><p class="obtainable">OBTAINABLE</p><p>Purchase every vehicle.</p></div>
+        <div class="badge-card glass" data-cat="game"><h3>Rich</h3><p class="obtainable">OBTAINABLE</p><p>Reach 1,000,000+ coins.</p></div>
+        <div class="badge-card glass" data-cat="game"><h3>Early Player</h3><p class="obtainable">UNOBTAINABLE</p><p>Played during Version 1.20.</p></div>
+      </div>
+
+      <div class="badge-category" data-cat="leaderboard"><h3>Leaderboard Badges</h3></div>
+      <div class="badge-grid">
+        <div class="badge-card glass glow" data-cat="leaderboard"><h3>#1 Leaderboard</h3><p class="obtainable">OBTAINABLE</p><p>Reach #1 on the leaderboard.</p></div>
+        <div class="badge-card glass" data-cat="leaderboard"><h3>#2 Leaderboard</h3><p class="obtainable">OBTAINABLE</p><p>Reach #2 on the leaderboard.</p></div>
+        <div class="badge-card glass" data-cat="leaderboard"><h3>#3 Leaderboard</h3><p class="obtainable">OBTAINABLE</p><p>Reach #3 on the leaderboard.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== UPDATES ===================== -->
+    <section id="updates" class="page">
+      <h2>Updates</h2>
+
+      <div class="card glass glow coming-soon">
+        <span class="coming-soon-tag">COMING SOON</span>
+        <h3>Version 1.20 - Gasoline Update</h3>
+        <p>
+          <strong>Gas</strong><br>
+          • Vehicles use fuel.<br>
+          • If you run out, you explode.<br>
+          • Crash other cars to refill fuel.<br>
+          • Better vehicles have larger fuel tanks.<br>
+          • More maps.<br>
+          • ADMIN ABUSE.
+        </p>
+      </div>
+
+      <div class="card glass">
+        <h3>Version 1.20.1 - 1.20.5</h3>
+        <p>• Bug fixes<br>• Performance improvements</p>
+      </div>
+
+      <div class="card glass coming-soon">
+        <span class="coming-soon-tag">COMING SOON</span>
+        <h3>Version 1.21</h3>
+        <p>Details still being worked out. Check back soon for what's next in Stop The Truckery.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CREDITS ===================== -->
+    <section id="credits" class="page">
+      <h2>Credits</h2>
+      <div class="credits-grid">
+        <div class="credit-card glass featured glow" style="--role-color:#aaffee">
+          <h3>Aces (@Aces22378)</h3>
+          <p>Founder - Lead Developer - QA Lead<br>Scripting, Modeling, UI, GFX, VFX, Sound & Music</p>
+        </div>
+        <div class="credit-card glass featured glow" style="--role-color:#ffcc00">
+          <h3>Saberwave1938 (@saberwave1938_93132)</h3>
+          <p>Developer - QA Tester<br>Modeler</p>
+        </div>
+        <div class="credit-card glass featured glow" style="--role-color:#0ea900">
+          <h3>Major Major (@captainrex0001_08137)</h3>
+          <p>Discord Server Manager - QA Tester</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Stop The Truckery</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
