@@ -9,11 +9,9 @@
 <body>
 
   <header class="hero">
-    <img src="https://i.ibb.co/XfD1tMQh/STT-Website-Banner.png" alt="" style="width: 100%; height: auto; display: block;">
+    <img src="https://i.ibb.co/M5Vz8QVT/STT-Banner.png" alt="">
   </header>
 
-</body>
-</html>
   <nav>
     <div class="nav-container">
       <div class="logo">Stop The Truckery</div>
@@ -21,6 +19,7 @@
         <div class="tab active" onclick="showPage('home', this)">Home</div>
         <div class="tab" onclick="showPage('vehicles', this)">Vehicles</div>
         <div class="tab" onclick="showPage('badges', this)">Badges</div>
+        <div class="tab" onclick="showPage('tiers', this)">Tiers</div>
         <div class="tab" onclick="showPage('updates', this)">Updates</div>
         <div class="tab" onclick="showPage('credits', this)">Credits</div>
       </div>
@@ -32,7 +31,7 @@
     <!-- ===================== HOME ===================== -->
     <section id="home" class="page active">
       <h1>Welcome to Stop The Truckery</h1>
-      <p>Smash into other players, earn coins, unlock faster and stronger vehicles, and dominate the arena.</p>
+      <p>Stop The Truckery is a competitive PvP vehicle combat game where you crash into opponents, earn coins, unlock vehicles, collect badges, and climb the leaderboard.</p>
     </section>
 
     <!-- ===================== VEHICLES ===================== -->
@@ -54,7 +53,7 @@
       <div class="cards" id="vehicleGrid">
 
         <!-- Common -->
-        <div class="card glass rarity-common" data-rarity="common" data-name="hatchback">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="hatchback">
           <span class="rarity-tag rarity-common">Common</span>
           <h3>Hatchback</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -63,7 +62,7 @@
           <p class="price">Price: Free</p>
         </div>
 
-        <div class="card glass rarity-common" data-rarity="common" data-name="sedan">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="sedan">
           <span class="rarity-tag rarity-common">Common</span>
           <h3>Sedan</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -72,7 +71,7 @@
           <p class="price">Price: 500 Coins</p>
         </div>
 
-        <div class="card glass rarity-common" data-rarity="common" data-name="taxi">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="taxi">
           <span class="rarity-tag rarity-common">Common</span>
           <h3>Taxi</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -81,7 +80,7 @@
           <p class="price">Price: 650 Coins</p>
         </div>
 
-        <div class="card glass rarity-common" data-rarity="common" data-name="van">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="van">
           <span class="rarity-tag rarity-common">Common</span>
           <h3>Van</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -90,7 +89,7 @@
           <p class="price">Price: 850 Coins</p>
         </div>
 
-        <div class="card glass rarity-common" data-rarity="common" data-name="suv">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="suv">
           <span class="rarity-tag rarity-common">Common</span>
           <h3>SUV</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -100,7 +99,7 @@
         </div>
 
         <!-- Uncommon -->
-        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="pickup">
+        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="pickup">
           <span class="rarity-tag rarity-uncommon">Uncommon</span>
           <h3>Pickup</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -109,7 +108,7 @@
           <p class="price">Price: 1,500 Coins</p>
         </div>
 
-        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="limousine">
+        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="limousine">
           <span class="rarity-tag rarity-uncommon">Uncommon</span>
           <h3>Limousine</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -118,7 +117,7 @@
           <p class="price">Price: 1,900 Coins</p>
         </div>
 
-        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="police sedan">
+        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="police sedan">
           <span class="rarity-tag rarity-uncommon">Uncommon</span>
           <h3>Police Sedan</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -127,7 +126,7 @@
           <p class="price">Price: 2,400 Coins</p>
         </div>
 
-        <div class="card glass rarity-uncommon" data-rarity="uncommon" data-name="police suv">
+        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="police suv">
           <span class="rarity-tag rarity-uncommon">Uncommon</span>
           <h3>Police SUV</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -137,7 +136,7 @@
         </div>
 
         <!-- Rare -->
-        <div class="card glass rarity-rare" data-rarity="rare" data-name="ambulance">
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="ambulance">
           <span class="rarity-tag rarity-rare">Rare</span>
           <h3>Ambulance</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -146,7 +145,7 @@
           <p class="price">Price: 3,700 Coins</p>
         </div>
 
-        <div class="card glass rarity-rare" data-rarity="rare" data-name="firetruck">
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="firetruck">
           <span class="rarity-tag rarity-rare">Rare</span>
           <h3>Firetruck</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -155,7 +154,7 @@
           <p class="price">Price: 4,600 Coins</p>
         </div>
 
-        <div class="card glass rarity-rare" data-rarity="rare" data-name="muscle">
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="muscle">
           <span class="rarity-tag rarity-rare">Rare</span>
           <h3>Muscle</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -164,7 +163,7 @@
           <p class="price">Price: 5,600 Coins</p>
         </div>
 
-        <div class="card glass rarity-rare" data-rarity="rare" data-name="muscle 2">
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="muscle 2">
           <span class="rarity-tag rarity-rare">Rare</span>
           <h3>Muscle 2</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -174,7 +173,7 @@
         </div>
 
         <!-- Epic -->
-        <div class="card glass rarity-epic" data-rarity="epic" data-name="police muscle">
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="police muscle">
           <span class="rarity-tag rarity-epic">Epic</span>
           <h3>Police Muscle</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -183,7 +182,7 @@
           <p class="price">Price: 8,200 Coins</p>
         </div>
 
-        <div class="card glass rarity-epic" data-rarity="epic" data-name="sports">
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="sports">
           <span class="rarity-tag rarity-epic">Epic</span>
           <h3>Sports</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -192,7 +191,7 @@
           <p class="price">Price: 9,800 Coins</p>
         </div>
 
-        <div class="card glass rarity-epic" data-rarity="epic" data-name="police sports">
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="police sports">
           <span class="rarity-tag rarity-epic">Epic</span>
           <h3>Police Sports</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -201,7 +200,7 @@
           <p class="price">Price: 11,700 Coins</p>
         </div>
 
-        <div class="card glass rarity-epic" data-rarity="epic" data-name="roadster">
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="roadster">
           <span class="rarity-tag rarity-epic">Epic</span>
           <h3>Roadster</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -211,7 +210,7 @@
         </div>
 
         <!-- Legendary -->
-        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="truck">
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="truck">
           <span class="rarity-tag rarity-legendary">Legendary</span>
           <h3>Truck</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -220,7 +219,7 @@
           <p class="price">Price: 16,500 Coins</p>
         </div>
 
-        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="monster truck">
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="monster truck">
           <span class="rarity-tag rarity-legendary">Legendary</span>
           <h3>Monster Truck</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -229,7 +228,7 @@
           <p class="price">Price: 19,500 Coins</p>
         </div>
 
-        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="bus">
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="bus">
           <span class="rarity-tag rarity-legendary">Legendary</span>
           <h3>Bus</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -238,7 +237,7 @@
           <p class="price">Price: 23,000 Coins</p>
         </div>
 
-        <div class="card glass glow rarity-legendary" data-rarity="legendary" data-name="truck + trailer">
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="truck + trailer">
           <span class="rarity-tag rarity-legendary">Legendary</span>
           <h3>Truck + Trailer</h3>
           <p class="obtainable">OBTAINABLE</p>
@@ -253,41 +252,19 @@
     </section>
 
     <!-- ===================== BADGES ===================== -->
+    <!-- Badge cards are generated from BADGE_CATEGORIES in script.js -->
     <section id="badges" class="page">
       <h2>Badges</h2>
+      <div class="filter-chips" id="badgeChips"></div>
+      <div id="badgeCategories"></div>
+    </section>
 
-      <div class="filter-chips" id="badgeChips">
-        <div class="chip active" data-cat="all" onclick="setBadgeFilter('all', this)">All</div>
-        <div class="chip" data-cat="staff" onclick="setBadgeFilter('staff', this)">Staff Badges</div>
-        <div class="chip" data-cat="game" onclick="setBadgeFilter('game', this)">Game Badges</div>
-        <div class="chip" data-cat="leaderboard" onclick="setBadgeFilter('leaderboard', this)">Leaderboard Badges</div>
-      </div>
-
-      <div class="badge-category" data-cat="staff"><h3>Staff Badges</h3></div>
-      <div class="badge-grid">
-        <div class="badge-card glass" data-cat="staff"><h3>Developer</h3><p class="obtainable">OBTAINABLE</p><p>Helped develop Stop The Truckery.</p></div>
-        <div class="badge-card glass" data-cat="staff"><h3>Moderator</h3><p class="obtainable">OBTAINABLE</p><p>Awarded to official moderators.</p></div>
-        <div class="badge-card glass" data-cat="staff"><h3>Admin</h3><p class="obtainable">OBTAINABLE</p><p>Awarded to game administrators.</p></div>
-      </div>
-
-      <div class="badge-category" data-cat="game"><h3>Game Badges</h3></div>
-      <div class="badge-grid">
-        <div class="badge-card glass" data-cat="game"><h3>QA Tester</h3><p class="obtainable">OBTAINABLE</p><p>Help test updates before release and find bugs.</p></div>
-        <div class="badge-card glass" data-cat="game"><h3>Content Creator</h3><p class="obtainable">OBTAINABLE</p><p>Create content featuring the game.</p></div>
-        <div class="badge-card glass" data-cat="game"><h3>Verified</h3><p class="obtainable">OBTAINABLE</p><p>Become a verified community member.</p></div>
-        <div class="badge-card glass" data-cat="game"><h3>Played With Staff</h3><p class="obtainable">OBTAINABLE</p><p>Play in a server with a staff member.</p></div>
-        <div class="badge-card glass" data-cat="game"><h3>Gifter</h3><p class="obtainable">OBTAINABLE</p><p>Gift another player.</p></div>
-        <div class="badge-card glass" data-cat="game"><h3>Car Collector</h3><p class="obtainable">OBTAINABLE</p><p>Purchase every vehicle.</p></div>
-        <div class="badge-card glass" data-cat="game"><h3>Rich</h3><p class="obtainable">OBTAINABLE</p><p>Reach 1,000,000+ coins.</p></div>
-        <div class="badge-card glass" data-cat="game"><h3>Early Player</h3><p class="obtainable">UNOBTAINABLE</p><p>Played during Version 1.20.</p></div>
-      </div>
-
-      <div class="badge-category" data-cat="leaderboard"><h3>Leaderboard Badges</h3></div>
-      <div class="badge-grid">
-        <div class="badge-card glass glow" data-cat="leaderboard"><h3>#1 Leaderboard</h3><p class="obtainable">OBTAINABLE</p><p>Reach #1 on the leaderboard.</p></div>
-        <div class="badge-card glass" data-cat="leaderboard"><h3>#2 Leaderboard</h3><p class="obtainable">OBTAINABLE</p><p>Reach #2 on the leaderboard.</p></div>
-        <div class="badge-card glass" data-cat="leaderboard"><h3>#3 Leaderboard</h3><p class="obtainable">OBTAINABLE</p><p>Reach #3 on the leaderboard.</p></div>
-      </div>
+    <!-- ===================== TIERS ===================== -->
+    <!-- Tier cards are generated from BADGE_TIERS in script.js -->
+    <section id="tiers" class="page">
+      <h2>Tiers</h2>
+      <p class="section-intro">Every badge belongs to one of 11 tiers. Higher tiers unlock a brighter gradient highlight on the badge itself.</p>
+      <div class="badge-grid" id="tiersGrid"></div>
     </section>
 
     <!-- ===================== UPDATES ===================== -->
