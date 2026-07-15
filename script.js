@@ -101,9 +101,9 @@ const BADGE_CATEGORIES = [
         key: "leaderboard",
         label: "Leaderboard Badges",
         badges: [
-            { name: "#1 Leaderboard", tier: 11, desc: "Reach #1 on the global leaderboard." },
-            { name: "#2 Leaderboard", tier: 10, desc: "Reach #2 on the global leaderboard." },
-            { name: "#3 Leaderboard", tier: 9, desc: "Reach #3 on the global leaderboard." }
+            { name: "#1 Leaderboard", tier: 11, img: "https://i.postimg.cc/9rLGdxcM/41.png", desc: "Reach #1 on the global leaderboard." },
+            { name: "#2 Leaderboard", tier: 10, img: "https://i.postimg.cc/7fKg3BqL/40.png", desc: "Reach #2 on the global leaderboard." },
+            { name: "#3 Leaderboard", tier: 9, img: "https://i.postimg.cc/56swBPfN/39.png", desc: "Reach #3 on the global leaderboard." }
         ]
     },
     { key: "garage", label: "Garage Badges", badges: progressionBadges(GARAGE_ENTRIES) },
