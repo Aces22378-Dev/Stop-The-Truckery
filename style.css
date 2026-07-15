@@ -2,12 +2,6 @@
    Stop The Truckery — Stylesheet
    ============================================ */
 
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* ---------- Variables ---------- */
 :root {
     --bg: #0B0A0E;
@@ -179,11 +173,6 @@ p {
     box-shadow: 0 0 18px rgba(251, 191, 36, 0.25), 0 0 2px rgba(251, 191, 36, 0.35) inset;
 }
 
-.card.glow.rarity-legendary,
-.badge-card.glow {
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3), 0 0 2px rgba(251, 191, 36, 0.4) inset;
-}
-
 .credit-card.glow {
     box-shadow: 0 0 26px color-mix(in srgb, var(--role-color, #FBBF24) 45%, transparent);
 }
@@ -277,15 +266,33 @@ p {
     border-color: var(--blue);
 }
 
-.card[data-rarity] {
-    border-left: 4px solid transparent;
+/* Vehicle cards reuse the .tier-card/.tier-strip mechanic from the Badges/Tiers
+   pages: --tier-gradient drives the top strip, --tier-highlight drives the glow.
+   Each rarity gets a dark-to-light gradient built from its accent color. */
+.card.rarity-common {
+    --tier-gradient: linear-gradient(90deg, #6B7280, #9CA3AF);
+    --tier-highlight: var(--common);
 }
 
-.card.rarity-common { border-left-color: var(--common); }
-.card.rarity-uncommon { border-left-color: var(--uncommon); }
-.card.rarity-rare { border-left-color: var(--rare); }
-.card.rarity-epic { border-left-color: var(--epic); }
-.card.rarity-legendary { border-left-color: var(--legendary); }
+.card.rarity-uncommon {
+    --tier-gradient: linear-gradient(90deg, #15803D, #34D399, #A7F3D0);
+    --tier-highlight: var(--uncommon);
+}
+
+.card.rarity-rare {
+    --tier-gradient: linear-gradient(90deg, #1D4ED8, #38BDF8, #BAE6FD);
+    --tier-highlight: var(--rare);
+}
+
+.card.rarity-epic {
+    --tier-gradient: linear-gradient(90deg, #6D28D9, #A78BFA, #E9D5FF);
+    --tier-highlight: var(--epic);
+}
+
+.card.rarity-legendary {
+    --tier-gradient: linear-gradient(90deg, #92400E, #FBBF24, #FDE68A);
+    --tier-highlight: var(--legendary);
+}
 
 .card.hidden-card {
     display: none;
@@ -401,6 +408,56 @@ p {
 .badge-card.hidden-card,
 .badge-category.hidden-card {
     display: none;
+}
+
+/* ---------- Badge Tiers (generated from BADGE_TIERS in script.js) ---------- */
+.section-intro {
+    max-width: 640px;
+    margin-bottom: 25px;
+}
+
+.tier-card {
+    position: relative;
+    overflow: hidden;
+    border-color: color-mix(in srgb, var(--tier-highlight, var(--accent)) 55%, var(--card));
+    box-shadow: 0 0 18px color-mix(in srgb, var(--tier-highlight, var(--accent)) 30%, transparent);
+}
+
+.tier-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--tier-gradient, var(--accent));
+}
+
+.badge-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin: 14px auto 10px;
+}
+
+.tier-tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.tier-showcase .tier-strip {
+    position: static;
+    height: 56px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.tier-showcase h3 {
+    font-size: 20px;
 }
 
 /* ---------- Credits ---------- */
