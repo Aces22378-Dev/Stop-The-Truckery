@@ -43,209 +43,692 @@
         <div class="filter-chips" id="rarityChips">
           <div class="chip active" data-rarity="all" onclick="setRarityFilter('all', this)">All</div>
           <div class="chip rarity-common" data-rarity="common" onclick="setRarityFilter('common', this)">Common</div>
-          <div class="chip rarity-uncommon" data-rarity="uncommon" onclick="setRarityFilter('uncommon', this)">Uncommon</div>
+          <div class="chip rarity-bronze" data-rarity="bronze" onclick="setRarityFilter('bronze', this)">Bronze</div>
+          <div class="chip rarity-copper" data-rarity="copper" onclick="setRarityFilter('copper', this)">Copper</div>
           <div class="chip rarity-rare" data-rarity="rare" onclick="setRarityFilter('rare', this)">Rare</div>
+          <div class="chip rarity-emerald" data-rarity="emerald" onclick="setRarityFilter('emerald', this)">Emerald</div>
           <div class="chip rarity-epic" data-rarity="epic" onclick="setRarityFilter('epic', this)">Epic</div>
           <div class="chip rarity-legendary" data-rarity="legendary" onclick="setRarityFilter('legendary', this)">Legendary</div>
+          <div class="chip rarity-mythic" data-rarity="mythic" onclick="setRarityFilter('mythic', this)">Mythic</div>
+          <div class="chip rarity-diamond" data-rarity="diamond" onclick="setRarityFilter('diamond', this)">Diamond</div>
+          <div class="chip rarity-obsidian" data-rarity="obsidian" onclick="setRarityFilter('obsidian', this)">Obsidian</div>
+          <div class="chip rarity-prismatic" data-rarity="prismatic" onclick="setRarityFilter('prismatic', this)">Prismatic</div>
         </div>
       </div>
 
-      <div class="cards" id="vehicleGrid">
+      <div id="vehicleGrid">
 
-        <!-- Common -->
-        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="hatchback">
+      <div class="badge-category"><h3>Starter</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="microcar (starter)">
           <span class="rarity-tag rarity-common">Common</span>
-          <h3>Hatchback</h3>
+          <h3>Microcar (Starter)</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="47"></div></div><span class="stat-value">100%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">45–55</span></div>
           <p class="price">Price: Free</p>
         </div>
+      </div>
 
-        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="sedan">
-          <span class="rarity-tag rarity-common">Common</span>
-          <h3>Sedan</h3>
+      <div class="badge-category"><h3>Civilian Special Vehicles</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-bronze" data-rarity="bronze" data-name="metro taxi">
+          <span class="rarity-tag rarity-bronze">Bronze</span>
+          <h3>Metro Taxi</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="53"></div></div><span class="stat-value">105%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
-          <p class="price">Price: 500 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="21.9048"></div></div><span class="stat-value">1.06x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="2.5"></div></div><span class="stat-value">56–69</span></div>
+          <p class="price">Price: 8,670 Coins</p>
         </div>
-
-        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="taxi">
-          <span class="rarity-tag rarity-common">Common</span>
-          <h3>Taxi</h3>
-          <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="47"></div></div><span class="stat-value">100%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="22"></div></div><span class="stat-value">115%</span></div>
-          <p class="price">Price: 650 Coins</p>
-        </div>
-
-        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="van">
-          <span class="rarity-tag rarity-common">Common</span>
-          <h3>Van</h3>
-          <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="35"></div></div><span class="stat-value">90%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="33"></div></div><span class="stat-value">130%</span></div>
-          <p class="price">Price: 850 Coins</p>
-        </div>
-
-        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="suv">
-          <span class="rarity-tag rarity-common">Common</span>
-          <h3>SUV</h3>
-          <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="53"></div></div><span class="stat-value">105%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="22"></div></div><span class="stat-value">115%</span></div>
-          <p class="price">Price: 1,150 Coins</p>
-        </div>
-
-        <!-- Uncommon -->
-        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="pickup">
-          <span class="rarity-tag rarity-uncommon">Uncommon</span>
-          <h3>Pickup</h3>
-          <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="59"></div></div><span class="stat-value">110%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="26"></div></div><span class="stat-value">120%</span></div>
-          <p class="price">Price: 1,500 Coins</p>
-        </div>
-
-        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="limousine">
-          <span class="rarity-tag rarity-uncommon">Uncommon</span>
-          <h3>Limousine</h3>
-          <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="41"></div></div><span class="stat-value">95%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="41"></div></div><span class="stat-value">140%</span></div>
-          <p class="price">Price: 1,900 Coins</p>
-        </div>
-
-        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="police sedan">
-          <span class="rarity-tag rarity-uncommon">Uncommon</span>
-          <h3>Police Sedan</h3>
-          <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="65"></div></div><span class="stat-value">115%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="19"></div></div><span class="stat-value">110%</span></div>
-          <p class="price">Price: 2,400 Coins</p>
-        </div>
-
-        <div class="card glass tier-card rarity-uncommon" data-rarity="uncommon" data-name="police suv">
-          <span class="rarity-tag rarity-uncommon">Uncommon</span>
-          <h3>Police SUV</h3>
-          <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="59"></div></div><span class="stat-value">110%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="26"></div></div><span class="stat-value">120%</span></div>
-          <p class="price">Price: 3,000 Coins</p>
-        </div>
-
-        <!-- Rare -->
-        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="ambulance">
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="frosty ice cream van">
           <span class="rarity-tag rarity-rare">Rare</span>
-          <h3>Ambulance</h3>
+          <h3>Frosty Ice Cream Van</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="47"></div></div><span class="stat-value">100%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="37"></div></div><span class="stat-value">135%</span></div>
-          <p class="price">Price: 3,700 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="11.9048"></div></div><span class="stat-value">0.85x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="4.8"></div></div><span class="stat-value">67–81</span></div>
+          <p class="price">Price: 20,910 Coins</p>
         </div>
-
-        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="firetruck">
-          <span class="rarity-tag rarity-rare">Rare</span>
-          <h3>Firetruck</h3>
+        <div class="card glass tier-card rarity-emerald" data-rarity="emerald" data-name="postal express">
+          <span class="rarity-tag rarity-emerald">Emerald</span>
+          <h3>Postal Express</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="29"></div></div><span class="stat-value">85%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="48"></div></div><span class="stat-value">150%</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="14.2857"></div></div><span class="stat-value">0.90x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="5.5"></div></div><span class="stat-value">70–85</span></div>
+          <p class="price">Price: 25,280 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="news tracker">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>News Tracker</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="16.6667"></div></div><span class="stat-value">0.95x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="6.2"></div></div><span class="stat-value">73–89</span></div>
+          <p class="price">Price: 29,900 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="utility service truck">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Utility Service Truck</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="11.9048"></div></div><span class="stat-value">0.85x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8.5"></div></div><span class="stat-value">83–102</span></div>
+          <p class="price">Price: 46,720 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-mythic" data-rarity="mythic" data-name="street sweeper">
+          <span class="rarity-tag rarity-mythic">Mythic</span>
+          <h3>Street Sweeper</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="4.7619"></div></div><span class="stat-value">0.70x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="9.2"></div></div><span class="stat-value">86–106</span></div>
+          <p class="price">Price: 52,290 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-obsidian" data-rarity="obsidian" data-name="royal limousine">
+          <span class="rarity-tag rarity-obsidian">Obsidian</span>
+          <h3>Royal Limousine</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="16.6667"></div></div><span class="stat-value">0.95x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="12.5"></div></div><span class="stat-value">101–124</span></div>
+          <p class="price">Price: 81,060 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-obsidian" data-rarity="obsidian" data-name="titan garbage truck">
+          <span class="rarity-tag rarity-obsidian">Obsidian</span>
+          <h3>Titan Garbage Truck</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="7.1429"></div></div><span class="stat-value">0.75x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10.5"></div></div><span class="stat-value">92–113</span></div>
+          <p class="price">Price: 63,150 Coins</p>
+        </div>
+      </div>
+
+      <div class="badge-category"><h3>Emergency Vehicles</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="police cruiser">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Police Cruiser</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="31.9048"></div></div><span class="stat-value">1.27x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7.5"></div></div><span class="stat-value">79–96</span></div>
+          <p class="price">Price: 39,120 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="police guardian">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Police Guardian</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="16.6667"></div></div><span class="stat-value">0.95x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7"></div></div><span class="stat-value">76–94</span></div>
+          <p class="price">Price: 35,480 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="response van">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Response Van</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="18.0952"></div></div><span class="stat-value">0.98x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7.5"></div></div><span class="stat-value">79–96</span></div>
+          <p class="price">Price: 39,120 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-mythic" data-rarity="mythic" data-name="police interceptor">
+          <span class="rarity-tag rarity-mythic">Mythic</span>
+          <h3>Police Interceptor</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="26.1905"></div></div><span class="stat-value">1.15x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8.2"></div></div><span class="stat-value">82–100</span></div>
+          <p class="price">Price: 44,400 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-mythic" data-rarity="mythic" data-name="lifeline ambulance">
+          <span class="rarity-tag rarity-mythic">Mythic</span>
+          <h3>Lifeline Ambulance</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: 58,900 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-diamond" data-rarity="diamond" data-name="police enforcer">
+          <span class="rarity-tag rarity-diamond">Diamond</span>
+          <h3>Police Enforcer</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="14.2857"></div></div><span class="stat-value">0.90x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="9.5"></div></div><span class="stat-value">88–107</span></div>
+          <p class="price">Price: 54,740 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-obsidian" data-rarity="obsidian" data-name="vanguard firetruck">
+          <span class="rarity-tag rarity-obsidian">Obsidian</span>
+          <h3>Vanguard Firetruck</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="7.1429"></div></div><span class="stat-value">0.75x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="12.5"></div></div><span class="stat-value">101–124</span></div>
+          <p class="price">Price: 81,060 Coins</p>
+        </div>
+      </div>
+
+      <div class="badge-category"><h3>Passenger Vehicles</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="sedan lx">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Sedan LX</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="21.4286"></div></div><span class="stat-value">1.05x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="1.5"></div></div><span class="stat-value">52–63</span></div>
           <p class="price">Price: 4,600 Coins</p>
         </div>
-
-        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="muscle">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="city hopper">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>City Hopper</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">45–55</span></div>
+          <p class="price">Price: Free</p>
+        </div>
+        <div class="card glass tier-card rarity-bronze" data-rarity="bronze" data-name="sedan gt">
+          <span class="rarity-tag rarity-bronze">Bronze</span>
+          <h3>Sedan GT</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="23.3333"></div></div><span class="stat-value">1.09x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="2.2"></div></div><span class="stat-value">55–67</span></div>
+          <p class="price">Price: 7,360 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-bronze" data-rarity="bronze" data-name="suv trailblazer">
+          <span class="rarity-tag rarity-bronze">Bronze</span>
+          <h3>SUV Trailblazer</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="22.8571"></div></div><span class="stat-value">1.08x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="3.2"></div></div><span class="stat-value">59–73</span></div>
+          <p class="price">Price: 12,010 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-bronze" data-rarity="bronze" data-name="family cruiser">
+          <span class="rarity-tag rarity-bronze">Bronze</span>
+          <h3>Family Cruiser</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="18.0952"></div></div><span class="stat-value">0.98x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="3"></div></div><span class="stat-value">58–72</span></div>
+          <p class="price">Price: 11,020 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="sedan elite">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>Sedan Elite</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="24.7619"></div></div><span class="stat-value">1.12x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="2.8"></div></div><span class="stat-value">58–70</span></div>
+          <p class="price">Price: 10,060 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="coupe rs">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>Coupe RS</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="28.5714"></div></div><span class="stat-value">1.20x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="3.5"></div></div><span class="stat-value">61–74</span></div>
+          <p class="price">Price: 13,560 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="suv summit">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>SUV Summit</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="24.7619"></div></div><span class="stat-value">1.12x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="4"></div></div><span class="stat-value">63–77</span></div>
+          <p class="price">Price: 16,260 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="coupe apex">
           <span class="rarity-tag rarity-rare">Rare</span>
-          <h3>Muscle</h3>
+          <h3>Coupe Apex</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="76"></div></div><span class="stat-value">125%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
-          <p class="price">Price: 5,600 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="30.4762"></div></div><span class="stat-value">1.24x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="4.2"></div></div><span class="stat-value">64–78</span></div>
+          <p class="price">Price: 17,390 Coins</p>
         </div>
-
-        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="muscle 2">
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="suv overland">
           <span class="rarity-tag rarity-rare">Rare</span>
-          <h3>Muscle 2</h3>
+          <h3>SUV Overland</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="82"></div></div><span class="stat-value">130%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
-          <p class="price">Price: 6,800 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="26.1905"></div></div><span class="stat-value">1.15x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="4.8"></div></div><span class="stat-value">67–81</span></div>
+          <p class="price">Price: 20,910 Coins</p>
         </div>
-
-        <!-- Epic -->
-        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="police muscle">
+        <div class="card glass tier-card rarity-emerald" data-rarity="emerald" data-name="coupe prestige">
+          <span class="rarity-tag rarity-emerald">Emerald</span>
+          <h3>Coupe Prestige</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="31.9048"></div></div><span class="stat-value">1.27x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="5"></div></div><span class="stat-value">68–82</span></div>
+          <p class="price">Price: 22,130 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-emerald" data-rarity="emerald" data-name="retro classic">
+          <span class="rarity-tag rarity-emerald">Emerald</span>
+          <h3>Retro Classic</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="26.6667"></div></div><span class="stat-value">1.16x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="5.5"></div></div><span class="stat-value">70–85</span></div>
+          <p class="price">Price: 25,280 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="retro royale">
           <span class="rarity-tag rarity-epic">Epic</span>
-          <h3>Police Muscle</h3>
+          <h3>Retro Royale</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="82"></div></div><span class="stat-value">130%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="22"></div></div><span class="stat-value">115%</span></div>
-          <p class="price">Price: 8,200 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="28.5714"></div></div><span class="stat-value">1.20x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="6.2"></div></div><span class="stat-value">73–89</span></div>
+          <p class="price">Price: 29,900 Coins</p>
         </div>
-
-        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="sports">
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="muscle outlaw">
           <span class="rarity-tag rarity-epic">Epic</span>
-          <h3>Sports</h3>
+          <h3>Muscle Outlaw</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="94"></div></div><span class="stat-value">140%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="4"></div></div><span class="stat-value">90%</span></div>
-          <p class="price">Price: 9,800 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="31.9048"></div></div><span class="stat-value">1.27x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="6.2"></div></div><span class="stat-value">73–89</span></div>
+          <p class="price">Price: 29,900 Coins</p>
         </div>
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="retro heritage">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Retro Heritage</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="30"></div></div><span class="stat-value">1.23x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7"></div></div><span class="stat-value">76–94</span></div>
+          <p class="price">Price: 35,480 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="muscle renegade">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Muscle Renegade</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="33.8095"></div></div><span class="stat-value">1.31x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7.5"></div></div><span class="stat-value">79–96</span></div>
+          <p class="price">Price: 39,120 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="sports vortex">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Sports Vortex</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="34.2857"></div></div><span class="stat-value">1.32x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7.5"></div></div><span class="stat-value">79–96</span></div>
+          <p class="price">Price: 39,120 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-mythic" data-rarity="mythic" data-name="muscle dominator">
+          <span class="rarity-tag rarity-mythic">Mythic</span>
+          <h3>Muscle Dominator</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="35.2381"></div></div><span class="stat-value">1.34x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8.8"></div></div><span class="stat-value">85–103</span></div>
+          <p class="price">Price: 49,090 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-mythic" data-rarity="mythic" data-name="sports velocity">
+          <span class="rarity-tag rarity-mythic">Mythic</span>
+          <h3>Sports Velocity</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="36.1905"></div></div><span class="stat-value">1.36x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8.8"></div></div><span class="stat-value">85–103</span></div>
+          <p class="price">Price: 49,090 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-diamond" data-rarity="diamond" data-name="sports phantom">
+          <span class="rarity-tag rarity-diamond">Diamond</span>
+          <h3>Sports Phantom</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="37.619"></div></div><span class="stat-value">1.39x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: 58,900 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-diamond" data-rarity="diamond" data-name="inferno hot rod">
+          <span class="rarity-tag rarity-diamond">Diamond</span>
+          <h3>Inferno Hot Rod</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="40.4762"></div></div><span class="stat-value">1.45x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11.5"></div></div><span class="stat-value">97–118</span></div>
+          <p class="price">Price: 71,930 Coins</p>
+        </div>
+      </div>
 
-        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="police sports">
+      <div class="badge-category"><h3>Commercial Vehicles</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="van cargo">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Van Cargo</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="15.7143"></div></div><span class="stat-value">0.93x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="2.2"></div></div><span class="stat-value">55–67</span></div>
+          <p class="price">Price: 7,360 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-bronze" data-rarity="bronze" data-name="van voyager">
+          <span class="rarity-tag rarity-bronze">Bronze</span>
+          <h3>Van Voyager</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="17.619"></div></div><span class="stat-value">0.97x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="2.8"></div></div><span class="stat-value">58–70</span></div>
+          <p class="price">Price: 10,060 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-bronze" data-rarity="bronze" data-name="pickup workhorse">
+          <span class="rarity-tag rarity-bronze">Bronze</span>
+          <h3>Pickup Workhorse</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="20.4762"></div></div><span class="stat-value">1.03x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="3.2"></div></div><span class="stat-value">59–73</span></div>
+          <p class="price">Price: 12,010 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="van grand tourer">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>Van Grand Tourer</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="3.5"></div></div><span class="stat-value">61–74</span></div>
+          <p class="price">Price: 13,560 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="pickup trailboss">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Pickup Trailboss</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="22.381"></div></div><span class="stat-value">1.07x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="4.5"></div></div><span class="stat-value">65–80</span></div>
+          <p class="price">Price: 19,120 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-emerald" data-rarity="emerald" data-name="pickup ironclad">
+          <span class="rarity-tag rarity-emerald">Emerald</span>
+          <h3>Pickup Ironclad</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="23.8095"></div></div><span class="stat-value">1.10x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="5.8"></div></div><span class="stat-value">71–87</span></div>
+          <p class="price">Price: 27,230 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-emerald" data-rarity="emerald" data-name="delivery express">
+          <span class="rarity-tag rarity-emerald">Emerald</span>
+          <h3>Delivery Express</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="13.3333"></div></div><span class="stat-value">0.88x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="5.5"></div></div><span class="stat-value">70–85</span></div>
+          <p class="price">Price: 25,280 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="truck hauler">
           <span class="rarity-tag rarity-epic">Epic</span>
-          <h3>Police Sports</h3>
+          <h3>Truck Hauler</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="94"></div></div><span class="stat-value">140%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11"></div></div><span class="stat-value">100%</span></div>
-          <p class="price">Price: 11,700 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="11.9048"></div></div><span class="stat-value">0.85x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8.8"></div></div><span class="stat-value">85–103</span></div>
+          <p class="price">Price: 49,090 Coins</p>
         </div>
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="truck freighter">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Truck Freighter</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="10.4762"></div></div><span class="stat-value">0.82x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: 58,900 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-mythic" data-rarity="mythic" data-name="truck freighter flatbed">
+          <span class="rarity-tag rarity-mythic">Mythic</span>
+          <h3>Truck Freighter Flatbed</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="9.5238"></div></div><span class="stat-value">0.80x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10.5"></div></div><span class="stat-value">92–113</span></div>
+          <p class="price">Price: 63,150 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-diamond" data-rarity="diamond" data-name="truck behemoth">
+          <span class="rarity-tag rarity-diamond">Diamond</span>
+          <h3>Truck Behemoth</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="8.5714"></div></div><span class="stat-value">0.78x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11.2"></div></div><span class="stat-value">95–117</span></div>
+          <p class="price">Price: 69,260 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-diamond" data-rarity="diamond" data-name="voyager coach">
+          <span class="rarity-tag rarity-diamond">Diamond</span>
+          <h3>Voyager Coach</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="8.5714"></div></div><span class="stat-value">0.78x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="14.8"></div></div><span class="stat-value">112–136</span></div>
+          <p class="price">Price: 103,300 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-obsidian" data-rarity="obsidian" data-name="truck behemoth flatbed">
+          <span class="rarity-tag rarity-obsidian">Obsidian</span>
+          <h3>Truck Behemoth Flatbed</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="7.619"></div></div><span class="stat-value">0.76x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="11.8"></div></div><span class="stat-value">98–120</span></div>
+          <p class="price">Price: 74,630 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-obsidian" data-rarity="obsidian" data-name="truck behemoth tanker">
+          <span class="rarity-tag rarity-obsidian">Obsidian</span>
+          <h3>Truck Behemoth Tanker</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="7.1429"></div></div><span class="stat-value">0.75x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="12.5"></div></div><span class="stat-value">101–124</span></div>
+          <p class="price">Price: 81,060 Coins</p>
+        </div>
+        <div class="card glass tier-card rarity-obsidian" data-rarity="obsidian" data-name="metro bus">
+          <span class="rarity-tag rarity-obsidian">Obsidian</span>
+          <h3>Metro Bus</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="7.1429"></div></div><span class="stat-value">0.75x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="14"></div></div><span class="stat-value">108–132</span></div>
+          <p class="price">Price: 95,370 Coins</p>
+        </div>
+      </div>
 
-        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="roadster">
+      <div class="badge-category"><h3>Special Vehicles</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="skyhawk helicopter">
+          <span class="rarity-tag rarity-prismatic">Prismatic</span>
+          <h3>Skyhawk Helicopter</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="76.1905"></div></div><span class="stat-value">2.20x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="9"></div></div><span class="stat-value">80–110</span></div>
+          <p class="price">Price: N/A</p>
+        </div>
+        <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="eagle eye helicopter">
+          <span class="rarity-tag rarity-prismatic">Prismatic</span>
+          <h3>Eagle Eye Helicopter</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="80.9524"></div></div><span class="stat-value">2.30x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8"></div></div><span class="stat-value">75–105</span></div>
+          <p class="price">Price: N/A</p>
+        </div>
+        <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="skyline helicopter">
+          <span class="rarity-tag rarity-prismatic">Prismatic</span>
+          <h3>Skyline Helicopter</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="71.4286"></div></div><span class="stat-value">2.10x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10.5"></div></div><span class="stat-value">85–120</span></div>
+          <p class="price">Price: N/A</p>
+        </div>
+        <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="talon helicopter">
+          <span class="rarity-tag rarity-prismatic">Prismatic</span>
+          <h3>Talon Helicopter</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="85.7143"></div></div><span class="stat-value">2.40x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7"></div></div><span class="stat-value">70–100</span></div>
+          <p class="price">Price: N/A</p>
+        </div>
+      </div>
+
+      <div class="badge-category"><h3>Armored Vehicles</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="sentinel apc">
+          <span class="rarity-tag rarity-prismatic">Prismatic</span>
+          <h3>Sentinel APC</h3>
+          <p class="obtainable unobtainable">UNOBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="95.2381"></div></div><span class="stat-value">2.60x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="65"></div></div><span class="stat-value">300–450</span></div>
+          <p class="price">Price: Staff Only</p>
+        </div>
+        <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="vanguard apc">
+          <span class="rarity-tag rarity-prismatic">Prismatic</span>
+          <h3>Vanguard APC</h3>
+          <p class="obtainable unobtainable">UNOBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="100"></div></div><span class="stat-value">2.70x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="75"></div></div><span class="stat-value">350–500</span></div>
+          <p class="price">Price: Staff Only</p>
+        </div>
+        <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="juggernaut tank">
+          <span class="rarity-tag rarity-prismatic">Prismatic</span>
+          <h3>Juggernaut Tank</h3>
+          <p class="obtainable unobtainable">UNOBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="85.7143"></div></div><span class="stat-value">2.40x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="100"></div></div><span class="stat-value">450–650</span></div>
+          <p class="price">Price: Staff Only</p>
+        </div>
+      </div>
+
+      <div class="badge-category"><h3>Prototype Vehicles</h3></div>
+      <div class="cards">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="pioneer hatchback">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Pioneer Hatchback</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="metro executive">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Metro Executive</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="21.4286"></div></div><span class="stat-value">1.05x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="city cab prototype">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>City Cab Prototype</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="13"></div></div><span class="stat-value">105–125</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="transit utility van">
+          <span class="rarity-tag rarity-common">Common</span>
+          <h3>Transit Utility Van</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="14.2857"></div></div><span class="stat-value">0.90x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="16.5"></div></div><span class="stat-value">120–145</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="trailmaster prototype">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>Trailmaster Prototype</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="21.4286"></div></div><span class="stat-value">1.05x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="13.5"></div></div><span class="stat-value">105–130</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="frontier pickup">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>Frontier Pickup</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="23.8095"></div></div><span class="stat-value">1.10x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="14.5"></div></div><span class="stat-value">110–135</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="royal executive">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>Royal Executive</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="16.6667"></div></div><span class="stat-value">0.95x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="19"></div></div><span class="stat-value">130–160</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-copper" data-rarity="copper" data-name="patrol interceptor">
+          <span class="rarity-tag rarity-copper">Copper</span>
+          <h3>Patrol Interceptor</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="26.1905"></div></div><span class="stat-value">1.15x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="12.5"></div></div><span class="stat-value">100–125</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="guardian response suv">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Guardian Response SUV</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="23.8095"></div></div><span class="stat-value">1.10x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="14.5"></div></div><span class="stat-value">110–135</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="lifeline rescue unit">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Lifeline Rescue Unit</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="17.5"></div></div><span class="stat-value">125–150</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="inferno rescue engine">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Inferno Rescue Engine</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="11.9048"></div></div><span class="stat-value">0.85x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="21"></div></div><span class="stat-value">140–170</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-rare" data-rarity="rare" data-name="thunder v8">
+          <span class="rarity-tag rarity-rare">Rare</span>
+          <h3>Thunder V8</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="30.9524"></div></div><span class="stat-value">1.25x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="thunder v8 x">
           <span class="rarity-tag rarity-epic">Epic</span>
-          <h3>Roadster</h3>
+          <h3>Thunder V8 X</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="100"></div></div><span class="stat-value">145%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">85%</span></div>
-          <p class="price">Price: 13,900 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="33.3333"></div></div><span class="stat-value">1.30x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: Not Purchasable</p>
         </div>
-
-        <!-- Legendary -->
-        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="truck">
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="pursuit dominator">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Pursuit Dominator</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="33.3333"></div></div><span class="stat-value">1.30x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="13.5"></div></div><span class="stat-value">105–130</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="velocity gt">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Velocity GT</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="38.0952"></div></div><span class="stat-value">1.40x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8"></div></div><span class="stat-value">80–100</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-epic" data-rarity="epic" data-name="pursuit velocity">
+          <span class="rarity-tag rarity-epic">Epic</span>
+          <h3>Pursuit Velocity</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="38.0952"></div></div><span class="stat-value">1.40x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10"></div></div><span class="stat-value">90–110</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="apex roadster">
           <span class="rarity-tag rarity-legendary">Legendary</span>
-          <h3>Truck</h3>
+          <h3>Apex Roadster</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="18"></div></div><span class="stat-value">75%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="56"></div></div><span class="stat-value">160%</span></div>
-          <p class="price">Price: 16,500 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="40.4762"></div></div><span class="stat-value">1.45x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7"></div></div><span class="stat-value">75–95</span></div>
+          <p class="price">Price: Not Purchasable</p>
         </div>
-
-        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="monster truck">
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="titan hauler">
           <span class="rarity-tag rarity-legendary">Legendary</span>
-          <h3>Monster Truck</h3>
+          <h3>Titan Hauler</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="24"></div></div><span class="stat-value">80%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="70"></div></div><span class="stat-value">180%</span></div>
-          <p class="price">Price: 19,500 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="7.1429"></div></div><span class="stat-value">0.75x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="23"></div></div><span class="stat-value">150–180</span></div>
+          <p class="price">Price: Not Purchasable</p>
         </div>
-
-        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="bus">
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="colossus monster">
           <span class="rarity-tag rarity-legendary">Legendary</span>
-          <h3>Bus</h3>
+          <h3>Colossus Monster</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="6"></div></div><span class="stat-value">65%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="85"></div></div><span class="stat-value">200%</span></div>
-          <p class="price">Price: 23,000 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="9.5238"></div></div><span class="stat-value">0.80x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="28"></div></div><span class="stat-value">170–210</span></div>
+          <p class="price">Price: Not Purchasable</p>
         </div>
-
-        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="truck + trailer">
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="metro transit classic">
           <span class="rarity-tag rarity-legendary">Legendary</span>
-          <h3>Truck + Trailer</h3>
+          <h3>Metro Transit Classic</h3>
           <p class="obtainable">OBTAINABLE</p>
-          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">60%</span></div>
-          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="100"></div></div><span class="stat-value">220%</span></div>
-          <p class="price">Price: 28,000 Coins</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="2.381"></div></div><span class="stat-value">0.65x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="33"></div></div><span class="stat-value">190–240</span></div>
+          <p class="price">Price: Not Purchasable</p>
         </div>
-
+        <div class="card glass tier-card rarity-legendary" data-rarity="legendary" data-name="atlas freight convoy">
+          <span class="rarity-tag rarity-legendary">Legendary</span>
+          <h3>Atlas Freight Convoy</h3>
+          <p class="obtainable">OBTAINABLE</p>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">0.60x</span></div>
+          <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="40"></div></div><span class="stat-value">220–280</span></div>
+          <p class="price">Price: Not Purchasable</p>
+        </div>
+      </div>
       </div>
 
       <p id="noResults" class="no-results" style="display:none;">No vehicles match your search.</p>
@@ -263,7 +746,7 @@
     <!-- Tier cards are generated from BADGE_TIERS in script.js -->
     <section id="tiers" class="page">
       <h2>Tiers</h2>
-      <p class="section-intro">Every badge belongs to one of 11 tiers. Tiers Have a gradient highlight on the badge itself.</p>
+      <p class="section-intro">Every badge belongs to one of 11 tiers. Higher tiers unlock a brighter gradient highlight on the badge itself.</p>
       <div class="badge-grid" id="tiersGrid"></div>
     </section>
 
@@ -281,7 +764,10 @@
           • Crash other cars to refill fuel.<br>
           • Better vehicles have larger fuel tanks.<br>
           • More maps.<br>
-          • ADMIN ABUSE.
+          • More badges.
+          • More vehicles.
+          • More staff vehicles.
+          • ???????
         </p>
       </div>
 
@@ -303,11 +789,11 @@
       <div class="credits-grid">
         <div class="credit-card glass featured glow" style="--role-color:#aaffee">
           <h3>Aces (@Aces22378)</h3>
-          <p>Founder - Lead Developer - QA Lead<br>Scripting, Modeling, UI, GFX, VFX, Sound & Music</p>
+          <p>Founder - Lead Developer - QA Lead<br>Scripter, Modeler, UI, GFX, VFX, Sound & Music</p>
         </div>
-        <div class="credit-card glass featured glow" style="--role-color:#ffcc00">
+        <div class="credit-card glass featured glow" style="--role-color:#0013e8">
           <h3>Saberwave1938 (@saberwave1938_93132)</h3>
-          <p>Developer - QA Tester<br>Modeler</p>
+          <p>Moderator - QA Tester<br>Trail Game Moderator</p>
         </div>
         <div class="credit-card glass featured glow" style="--role-color:#0ea900">
           <h3>Major Major (@captainrex0001_08137)</h3>
