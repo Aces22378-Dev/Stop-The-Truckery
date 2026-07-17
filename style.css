@@ -1,921 +1,683 @@
 /* ============================================
    Stop The Truckery — Stylesheet
-   Tier System Update
    ============================================ */
 
-
 /* ---------- Variables ---------- */
-
 :root {
+    --bg: #0B0A0E;
+    --surface: #18161D;
+    --card: #23202A;
+    --text: #F9FAFB;
+    --muted: #9CA3AF;
+    --accent: #FBBF24;
+    --blue: #38BDF8;
 
-    --bg:#0B0A0E;
-    --surface:#18161D;
-    --card:#23202A;
-
-    --text:#F9FAFB;
-    --muted:#9CA3AF;
-
-    --accent:#FBBF24;
-    --blue:#38BDF8;
-
-
-    /* old rarity colors still used by filters */
-
-    --common:#9CA3AF;
-    --uncommon:#34D399;
-    --rare:#38BDF8;
-    --epic:#A78BFA;
-    --legendary:#FBBF24;
-
+    /* rarity colors */
+    --common: #9CA3AF;
+    --bronze: #CD7F32;
+    --rare: #38BDF8;
+    --epic: #A78BFA;
+    --legendary: #FBBF24;
+    --prismatic: #A855F7;
+    --copper: #E08A3E;
+    --emerald: #22C55E;
+    --mythic: #EF4444;
+    --diamond: #67E8F9;
+    --obsidian: #6B7280;
 }
-
-
 
 /* ---------- Reset ---------- */
-
 * {
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 html {
-
-    scrollbar-width:none;
-
+    scrollbar-width: none;
 }
-
 
 html::-webkit-scrollbar {
-
-    display:none;
-
+    display: none;
 }
-
-
 
 body {
-
-    background:var(--bg);
-
+    background: var(--bg);
     background-image:
-    radial-gradient(
-        circle at 15% 20%,
-        rgba(56,189,248,.08),
-        transparent 40%
-    ),
-
-    radial-gradient(
-        circle at 85% 75%,
-        rgba(251,191,36,.06),
-        transparent 45%
-    );
-
-    background-attachment:fixed;
-
-    color:var(--text);
-
-    font-family:Arial,sans-serif;
-
+        radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.08), transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(251, 191, 36, 0.06), transparent 45%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    overflow: auto;
 }
-
-
 
 /* ---------- Banner ---------- */
-
-
 .hero {
-
-    width:100%;
-
-    aspect-ratio:1920 / 480;
-
-    background:#000;
-
-    overflow:hidden;
-
+    width: 100%;
+    aspect-ratio: 1920 / 480; /* banner's native ratio — height now scales exactly with width */
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .hero img {
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* container ratio matches the image ratio, so cover never actually crops anything */
 }
-
-
 
 /* ---------- Navigation ---------- */
-
-
 nav {
-
-    background:
-    rgba(24,22,29,.7);
-
-    backdrop-filter:blur(14px);
-
-    border-bottom:
-    2px solid var(--card);
-
-    padding:15px;
-
-    position:sticky;
-
-    top:0;
-
-    z-index:10;
-
+    background: rgba(24, 22, 29, 0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 2px solid var(--card);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
-
 
 .nav-container {
-
-    max-width:1300px;
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
 
 .logo {
-
-    color:var(--accent);
-
-    font-size:28px;
-
-    font-weight:900;
-
+    color: var(--accent);
+    font-size: 28px;
+    font-weight: 900;
 }
-
-
 
 .nav-links {
-
-    display:flex;
-
-    gap:12px;
-
+    display: flex;
+    gap: 12px;
 }
-
-
 
 .tab {
-
-    padding:12px 18px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.25s;
-
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--text);
+    transition: .25s;
 }
-
 
 .tab:hover {
-
-    background:var(--card);
-
-    transform:scale(1.08);
-
+    background: var(--card);
+    transform: scale(1.08);
 }
-
 
 .tab.active {
-
-    background:var(--accent);
-
-    color:#111;
-
+    background: var(--accent);
+    color: #111;
 }
-
-
 
 /* ---------- Pages ---------- */
-
-
 main {
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:40px 25px;
-
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 25px;
 }
-
 
 .page {
-
-    display:none;
-
-    opacity:0;
-
+    display: none;
 }
-
 
 .page.active {
-
-    display:block;
-
-    animation:fade .35s ease forwards;
-
+    display: block;
 }
-
-
-@keyframes fade {
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-
-/* ---------- Cards ---------- */
-
-
-.cards {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-
-}
-
-
-
-.card {
-
-    position:relative;
-
-    background:var(--card);
-
-    padding:25px;
-
-    border-radius:18px;
-
-    transition:.25s;
-
-}
-
-
-
-.card:hover {
-
-    transform:translateY(-7px);
-
-}
-
-
-
-/* ==========================================
-   SHARED TIER SYSTEM
-   Used by badges + vehicles
-   ========================================== */
-
-
-.tier-card {
-
-    position:relative;
-
-    overflow:hidden;
-
-
-    border:
-    2px solid
-    color-mix(
-        in srgb,
-        var(--tier-highlight,var(--accent))
-        55%,
-        var(--card)
-    );
-
-
-    box-shadow:
-    0 0 18px
-    color-mix(
-        in srgb,
-        var(--tier-highlight,var(--accent))
-        30%,
-        transparent
-    );
-
-
-}
-
-
-
-.tier-strip {
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    right:0;
-
-    height:6px;
-
-    background:
-    var(--tier-gradient,var(--accent));
-
-}
-
-
-
-/* Vehicle tags now use tier colors */
-
-
-.rarity-tag {
-
-    position:absolute;
-
-    top:16px;
-
-    right:16px;
-
-    padding:4px 10px;
-
-    border-radius:999px;
-
-    font-size:11px;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    background:
-    rgba(0,0,0,.35);
-
-
-    color:
-    var(--tier-highlight,var(--accent));
-
-}
-
-
-
-/* hidden cards */
-
-
-.hidden-card {
-
-    display:none;
-
-}
-/* ---------- Glass ---------- */
-
-.glass {
-
-    background:
-    rgba(35,32,42,.55);
-
-    backdrop-filter:
-    blur(10px);
-
-}
-
-
 
 /* ---------- Text ---------- */
-
-
 h1 {
-
-    font-size:42px;
-
-    margin-bottom:20px;
-
+    font-size: 42px;
+    margin-bottom: 20px;
 }
-
 
 h2 {
-
-    color:var(--accent);
-
-    font-size:34px;
-
-    margin-bottom:25px;
-
+    color: var(--accent);
+    font-size: 34px;
+    margin-bottom: 25px;
 }
-
 
 h3 {
-
-    margin-bottom:12px;
-
+    margin-bottom: 12px;
 }
-
 
 p {
-
-    color:var(--muted);
-
-    line-height:1.7;
-
+    color: var(--muted);
+    line-height: 1.7;
 }
 
+/* ---------- Glass + Glow ---------- */
+.glass {
+    background: rgba(35, 32, 42, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
 
+.glow {
+    box-shadow: 0 0 18px rgba(251, 191, 36, 0.25), 0 0 2px rgba(251, 191, 36, 0.35) inset;
+}
 
-/* ---------- Toolbar ---------- */
+.credit-card.glow {
+    box-shadow: 0 0 26px color-mix(in srgb, var(--role-color, #FBBF24) 45%, transparent);
+}
 
-
+/* ---------- Toolbar / Search / Filters ---------- */
 .toolbar {
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:14px;
-
-    align-items:center;
-
-    margin-bottom:25px;
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 25px;
 }
-
-
 
 .search-input {
-
-    flex:1;
-
-    min-width:220px;
-
-    padding:12px 16px;
-
-    border-radius:12px;
-
-    border:1px solid var(--card);
-
-    background:
-    rgba(35,32,42,.6);
-
-    color:var(--text);
-
-    outline:none;
-
+    flex: 1;
+    min-width: 220px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--card);
+    background: rgba(35, 32, 42, 0.6);
+    backdrop-filter: blur(8px);
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: .2s;
 }
-
-
 
 .search-input:focus {
-
-    border-color:var(--blue);
-
+    border-color: var(--blue);
 }
-
-
 
 .filter-chips {
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
-
 
 .chip {
-
-    padding:8px 16px;
-
-    border-radius:999px;
-
-    background:var(--card);
-
-    border:2px solid transparent;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 2px solid transparent;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    transition: .2s;
+    color: var(--text);
 }
 
-
+.chip:hover {
+    transform: translateY(-2px);
+}
 
 .chip.active {
-
-    border-color:var(--accent);
-
-    color:var(--accent);
-
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
+.chip.rarity-common.active { border-color: var(--common); color: var(--common); }
+.chip.rarity-bronze.active { border-color: var(--bronze); color: var(--bronze); }
+.chip.rarity-copper.active { border-color: var(--copper); color: var(--copper); }
+.chip.rarity-rare.active { border-color: var(--rare); color: var(--rare); }
+.chip.rarity-emerald.active { border-color: var(--emerald); color: var(--emerald); }
+.chip.rarity-epic.active { border-color: var(--epic); color: var(--epic); }
+.chip.rarity-legendary.active { border-color: var(--legendary); color: var(--legendary); }
+.chip.rarity-mythic.active { border-color: var(--mythic); color: var(--mythic); }
+.chip.rarity-diamond.active { border-color: var(--diamond); color: var(--diamond); }
+.chip.rarity-obsidian.active { border-color: var(--obsidian); color: var(--obsidian); }
+.chip.rarity-prismatic.active { border-color: var(--prismatic); color: var(--prismatic); }
 
-
-/* rarity filters */
-
-.chip.rarity-common.active {
-
-    border-color:var(--common);
-
-    color:var(--common);
-
+.no-results {
+    text-align: center;
+    padding: 40px 0;
+    font-style: italic;
 }
 
-
-.chip.rarity-uncommon.active {
-
-    border-color:var(--uncommon);
-
-    color:var(--uncommon);
-
+/* ---------- Vehicle Cards ---------- */
+#vehicleGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-
-.chip.rarity-rare.active {
-
-    border-color:var(--rare);
-
-    color:var(--rare);
-
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-
-.chip.rarity-epic.active {
-
-    border-color:var(--epic);
-
-    color:var(--epic);
-
+.cards.hidden-card {
+    display: none;
 }
 
-
-.chip.rarity-legendary.active {
-
-    border-color:var(--legendary);
-
-    color:var(--legendary);
-
+.card {
+    position: relative;
+    background: var(--card);
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: .25s;
 }
 
-
-
-/* ---------- Vehicle Stats ---------- */
-
-
-.stat-row {
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin:10px 0;
-
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--blue);
 }
 
+/* Vehicle cards reuse the .tier-card/.tier-strip mechanic from the Badges/Tiers
+   pages: --tier-gradient/--tier-highlight are set inline by applyVehicleTierColors()
+   in script.js, using the same mechanism as the badge cards. */
 
-
-.stat-label {
-
-    width:110px;
-
-    font-size:13px;
-
-    color:var(--muted);
-
+.card.hidden-card {
+    display: none;
 }
 
-
-
-.stat-bar {
-
-    flex:1;
-
-    height:8px;
-
-    border-radius:999px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    overflow:hidden;
-
+.card h3 {
+    padding-right: 92px; /* keeps title text clear of the absolutely-positioned rarity tag */
 }
 
-
-
-.stat-fill {
-
-    height:100%;
-
-    width:0%;
-
-    border-radius:999px;
-
-    background:
-    linear-gradient(
-        90deg,
-        var(--blue),
-        var(--accent)
-    );
-
-    transition:
-    width 1s cubic-bezier(.22,1,.36,1);
-
+.rarity-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    max-width: calc(100% - 32px);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
 }
 
+.rarity-tag.rarity-common { color: var(--common); }
+.rarity-tag.rarity-bronze { color: var(--bronze); }
+.rarity-tag.rarity-copper { color: var(--copper); }
+.rarity-tag.rarity-rare { color: var(--rare); }
+.rarity-tag.rarity-emerald { color: var(--emerald); }
+.rarity-tag.rarity-epic { color: var(--epic); }
+.rarity-tag.rarity-legendary { color: var(--legendary); }
+.rarity-tag.rarity-mythic { color: var(--mythic); }
+.rarity-tag.rarity-diamond { color: var(--diamond); }
+.rarity-tag.rarity-obsidian { color: var(--obsidian); }
+.rarity-tag.rarity-prismatic { color: var(--prismatic); }
 
-
-.stat-value {
-
-    width:44px;
-
-    text-align:right;
-
-    font-size:13px;
-
-    font-weight:bold;
-
+.obtainable {
+    color: var(--blue);
+    font-weight: 700;
+    margin: 8px 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
-
-
-/* ---------- Price ---------- */
-
+.obtainable.unobtainable {
+    color: #EF4444;
+}
 
 .price {
-
-    margin-top:14px;
-
-    color:var(--text);
-
-    font-weight:bold;
-
+    margin-top: 14px;
+    color: var(--text);
+    font-weight: 700;
 }
 
+/* ---------- Animated Stat Bars ---------- */
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
 
+.stat-label {
+    width: 110px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-shrink: 0;
+}
 
-/* ======================================
-   BADGES
-   ====================================== */
+.stat-bar {
+    flex: 1;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
 
+.stat-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue), var(--accent));
+    transition: width 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.stat-value {
+    width: 68px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* ---------- Badge System ---------- */
+#badgeCategories {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* gap only applies between VISIBLE children, unlike margin-top */
+}
 
 .badge-grid {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-    gap:18px;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
 }
 
+.badge-category {
+    display: flex;
+    align-items: center;
+    min-height: 64px; /* fits 2 lines at this font-size, so short and long labels match */
+    margin-bottom: 18px;
+    padding: 15px 20px;
+    background: var(--surface);
+    border-left: 5px solid var(--accent);
+    border-radius: 12px;
+}
 
+.badge-category h3 {
+    color: var(--accent);
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 0;
+}
 
 .badge-card {
-
-    background:var(--surface);
-
-    padding:25px;
-
-    border-radius:16px;
-
-    text-align:center;
-
+    background: var(--surface);
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid var(--card);
+    text-align: center;
+    transition: .25s;
 }
-
-
 
 .badge-card:hover {
-
-    transform:translateY(-6px);
-
+    transform: translateY(-6px);
+    border-color: var(--blue);
 }
 
+.badge-card.hidden-card,
+.badge-category.hidden-card {
+    display: none;
+}
 
+/* ---------- Badge Tiers (generated from BADGE_TIERS in script.js) ---------- */
+.section-intro {
+    max-width: 640px;
+    margin-bottom: 25px;
+}
+
+.tier-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 18px color-mix(in srgb, var(--tier-highlight, var(--accent)) 28%, transparent);
+    animation-name: tierBorderPulse;
+    animation-duration: var(--tier-duration, 10s);
+    animation-timing-function: var(--tier-easing, ease-in-out);
+    animation-delay: var(--tier-delay, 0s);
+    animation-iteration-count: infinite;
+    /* Always alternate here (not var(--tier-play-direction)) — Prismatic's
+       strip scrolls one-directional, but its first and last border colors
+       don't match, so looping "normal" would snap at the wrap point. Ping-
+       ponging guarantees a seamless, jump-free loop for every tier while
+       duration/easing/delay still stay perfectly in sync with the strip. */
+    animation-direction: alternate;
+}
+
+/* Border cycles through 6 stops sampled from the tier's actual gradient
+   colors — the exact same hex values the strip uses — on the identical
+   duration/easing/delay as the strip, so the two read as one motion rather
+   than a static ring around a moving fill. */
+@keyframes tierBorderPulse {
+    0%   { border-color: var(--tier-c1, var(--tier-highlight, var(--accent))); }
+    20%  { border-color: var(--tier-c2, var(--tier-highlight, var(--accent))); }
+    40%  { border-color: var(--tier-c3, var(--tier-highlight, var(--accent))); }
+    60%  { border-color: var(--tier-c4, var(--tier-highlight, var(--accent))); }
+    80%  { border-color: var(--tier-c5, var(--tier-highlight, var(--accent))); }
+    100% { border-color: var(--tier-c6, var(--tier-highlight, var(--accent))); }
+}
+
+/* ---------- Tier Motion System ----------
+   Every tier's gradient (colors unchanged) lives in --tier-gradient; the
+   motion itself (speed/intensity/direction) comes from --tier-duration,
+   --tier-amplitude, --tier-easing, --tier-play-direction and --tier-delay,
+   all set per-card from script.js (see getTierMotion/getVehicleMotion).
+   That's the whole system — a new tier needs nothing here, only colors.
+
+   The strip and shimmer animate via `transform` only (GPU-composited, cheap
+   even with dozens on screen). The card border also pulses using the exact
+   same duration/easing/delay/direction variables, so it reads as one motion
+   rather than two — border-color is the one animated property here that
+   isn't transform, but it's a 1px stroke so the repaint cost is negligible. */
+
+.tier-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    overflow: hidden;
+}
+
+.tier-strip::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -25%;
+    width: 150%;
+    height: 100%;
+    background: var(--tier-gradient, var(--accent));
+    will-change: transform;
+    animation-name: tierBreathe;
+    animation-duration: var(--tier-duration, 10s);
+    animation-timing-function: var(--tier-easing, ease-in-out);
+    animation-delay: var(--tier-delay, 0s);
+    animation-iteration-count: infinite;
+    animation-direction: var(--tier-play-direction, alternate);
+}
+
+/* Default motion: a gentle side-to-side drift. Using animation-direction:
+   alternate means both endpoints are approached at zero velocity (ease-in-out),
+   so the reverse never produces a visible snap — it just glides back. */
+@keyframes tierBreathe {
+    0%   { transform: translate3d(calc(var(--tier-amplitude, 8%) * -1), 0, 0); }
+    100% { transform: translate3d(var(--tier-amplitude, 8%), 0, 0); }
+}
+
+/* Prismatic-style continuous flow: the fill is the tier's colors duplicated
+   end-to-end, so translating by exactly -50% of its own (double) width lands
+   pixel-identical to the start — a perfectly seamless, jump-free loop. */
+.tier-strip.tier-flow-continuous::before {
+    left: 0;
+    width: 200%;
+    background: var(--tier-gradient-x2, var(--tier-gradient, var(--accent)));
+    animation-name: tierScroll;
+    animation-direction: normal;
+}
+
+@keyframes tierScroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Diamond-style shimmer: a bright glint sweeps across on top of the base
+   drift. It fully exits the (clipped) strip before looping, so the reset
+   from one edge back to the other happens while nothing is visible. */
+.tier-strip.tier-shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 35%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    mix-blend-mode: screen;
+    will-change: transform;
+    animation: tierGlint 3.2s linear infinite;
+}
+
+@keyframes tierGlint {
+    from { transform: translate3d(-140%, 0, 0); }
+    to   { transform: translate3d(240%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tier-card,
+    .tier-strip::before,
+    .tier-strip::after {
+        animation: none;
+    }
+
+    .tier-card {
+        border-color: color-mix(in srgb, var(--tier-highlight, var(--accent)) 55%, var(--card));
+    }
+}
 
 .badge-icon {
-
-    width:64px;
-
-    height:64px;
-
-    object-fit:contain;
-
-    margin:14px auto;
-
-    display:block;
-
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin: 14px auto 10px;
 }
-
-
 
 .tier-tag {
-
-    display:inline-block;
-
-    margin-bottom:10px;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-transform: uppercase;
 }
 
+.tier-number {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
 
-
-/* Tier showcase cards */
-
+.tier-color-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+}
 
 .tier-showcase .tier-strip {
-
-    position:static;
-
-    height:56px;
-
-    border-radius:12px;
-
-    margin-bottom:16px;
-
+    position: relative; /* stays a containing block for ::before/::after without the absolute offsets */
+    height: 56px;
+    border-radius: 12px;
+    margin-bottom: 16px;
 }
 
-
-
-/* ---------- Updates ---------- */
-
-
-.coming-soon {
-
-    border:
-
-    1px dashed rgba(56,189,248,.5);
-
+.tier-showcase h3 {
+    font-size: 20px;
+    letter-spacing: 1px;
 }
-
-
-
-.coming-soon-tag {
-
-    color:var(--blue);
-
-    background:
-    rgba(56,189,248,.12);
-
-    padding:4px 10px;
-
-    border-radius:999px;
-
-    font-size:11px;
-
-    font-weight:800;
-
-}
-
-
-
-#updates .card {
-
-    margin-bottom:20px;
-
-}
-
-
 
 /* ---------- Credits ---------- */
-
-
 .credits-grid {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-    gap:25px;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
-
-
 
 .credit-card {
-
-    background:
-    linear-gradient(
-        145deg,
-        #23202A,
-        #18161D
-    );
-
-    padding:30px;
-
-    border-radius:20px;
-
-    text-align:center;
-
+    background: linear-gradient(145deg, #23202A, #18161D);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #302d39;
+    transition: .25s;
 }
-
-
 
 .credit-card:hover {
-
-    transform:translateY(-8px);
-
+    transform: translateY(-8px);
+    border-color: var(--blue);
 }
 
+.credit-card.featured {
+    border-color: var(--role-color, var(--accent));
+}
 
+/* ---------- Updates / Coming Soon ---------- */
+.coming-soon {
+    position: relative;
+    border: 1px dashed rgba(56, 189, 248, 0.5);
+    opacity: 0.85;
+}
+
+.coming-soon-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    color: var(--blue);
+    background: rgba(56, 189, 248, 0.12);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+#updates .card {
+    margin-bottom: 20px;
+}
+
+#updates .card:last-child {
+    margin-bottom: 0;
+}
 
 /* ---------- Footer ---------- */
-
-
 footer {
-
-    background:var(--surface);
-
-    padding:25px;
-
-    text-align:center;
-
-    color:var(--muted);
-
+    background: var(--surface);
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
 }
 
-
-
 /* ---------- Mobile ---------- */
-
-
-@media(max-width:900px){
-
-
+@media (max-width: 900px) {
     .nav-container {
-
-        flex-direction:column;
-
-        gap:15px;
-
+        flex-direction: column;
+        gap: 15px;
     }
-
-
 
     .nav-links {
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-
 
     .logo {
-
-        font-size:22px;
-
+        font-size: 22px;
     }
-
-
 
     .stat-label {
-
-        width:90px;
-
+        width: 90px;
     }
-
-
 }
