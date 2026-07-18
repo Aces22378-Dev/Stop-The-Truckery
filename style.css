@@ -15,15 +15,15 @@
     /* rarity colors */
     --common: #9CA3AF;
     --bronze: #CD7F32;
-    --rare: #38BDF8;
-    --epic: #A78BFA;
-    --legendary: #FBBF24;
+    --rare: #3B82F6;
+    --epic: #A855F7;
+    --legendary: #FACC15;
     --prismatic: #A855F7;
     --copper: #E08A3E;
     --emerald: #22C55E;
     --mythic: #EF4444;
     --diamond: #67E8F9;
-    --obsidian: #6B7280;
+    --obsidian: #4B5563;
 }
 
 /* ---------- Reset ---------- */
@@ -285,6 +285,8 @@ p {
 
 .card h3 {
     padding-right: 92px; /* keeps title text clear of the absolutely-positioned rarity tag */
+    min-height: 2.6em; /* reserves space for 2 lines so short and long titles align the same */
+    line-height: 1.3;
 }
 
 .rarity-tag {
