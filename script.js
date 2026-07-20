@@ -1,4 +1,4 @@
- /* ============================================
+/* ============================================
    Stop The Truckery — Site Logic
    ============================================ */
 
@@ -187,15 +187,15 @@ const BADGE_CATEGORIES = [
             { name: "Owner", tier: "Prismatic", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Owner.png", description: "Become the game owner." },
             { name: "Management", tier: "Prismatic", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Management.png", description: "Become part of management." },
             { name: "Developer", tier: "Prismatic", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Dev.png", description: "Become an official developer." },
-            { name: "QA Team", tier: "Legendary", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/QA%20Team.png", description: "Become a QA tester." },
             { name: "Moderator", tier: "Prismatic", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Mod.png", description: "Become a moderator." },
             { name: "Administrator", tier: "Prismatic", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Admin.png", description: "Become an administrator." }
         ]
     },
     {
-        key: "community",
-        label: "Community Badges",
+        key: "special",
+        label: "Special Badges",
         badges: [
+            { name: "QA Team", tier: "Legendary", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/QA%20Team.png", description: "Become a QA tester." },
             { name: "Verified", tier: "Legendary", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Verified.png", description: "Receive verified status." },
             { name: "Content Creator", tier: "Emerald", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Content%20Creator.png", description: "Become an approved content creator." },
             { name: "Early Player", tier: "Prismatic", icon: "https://raw.githubusercontent.com/Aces22378-Dev/STT-Assets/main/Badges/Ealry%20player.png", description: "Play during early access." },
@@ -246,6 +246,7 @@ function createBadgeCard(badge, catKey) {
     `;
 
     applyTierPresentation(card, tier.colors, getTierMotion(tier));
+    makeCardLinkable(card, "badges", badge.name);
     return card;
 }
 
@@ -293,6 +294,7 @@ function renderTiers() {
         `;
 
         applyTierPresentation(card, tier.colors, getTierMotion(tier));
+        makeCardLinkable(card, "tiers", tier.name);
         grid.appendChild(card);
     });
 }
@@ -317,6 +319,149 @@ function applyVehicleTierColors() {
     });
 }
 
+/* ---------- QA Testing Access ----------
+   NOTE: this is a soft gate only, not real security — the password check
+   runs entirely client-side, so anyone can read it in page source or dev
+   tools. It just keeps the staff build link from being casually stumbled
+   on by regular visitors browsing the site. */
+
+function checkQaPassword() {
+    const input = document.getElementById("qaPassword").value.trim();
+    const error = document.getElementById("qaError");
+
+    if (input === "Lowpoly Devs") {
+        document.getElementById("qaLocked").style.display = "none";
+        document.getElementById("qaUnlocked").style.display = "block";
+    } else {
+        error.style.display = "block";
+    }
+}
+
+/* ---------- Card Entrance Animation ---------- */
+
+function staggerCards(cards, maxDelayMs = 480) {
+    Array.from(cards).forEach((card, i) => {
+        card.classList.remove("card-enter");
+        void card.offsetWidth; // force reflow so the animation restarts each time
+        card.style.animationDelay = Math.min(i * 40, maxDelayMs) + "ms";
+        card.classList.add("card-enter");
+    });
+}
+
+/* ---------- Category Jump Nav ---------- */
+
+function buildCategoryJumpNav() {
+    const jumpNav = document.getElementById("categoryJump");
+    if (!jumpNav) return;
+
+    const headers = document.querySelectorAll("#vehicleGrid .badge-category");
+    jumpNav.innerHTML = "";
+
+    headers.forEach(header => {
+        const chip = document.createElement("div");
+        chip.className = "category-jump-chip";
+        chip.textContent = header.querySelector("h3").textContent;
+        chip.addEventListener("click", () => {
+            header.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        jumpNav.appendChild(chip);
+    });
+}
+
+/* ---------- Back to Top ---------- */
+
+window.addEventListener("scroll", () => {
+    const btn = document.getElementById("backToTop");
+    if (btn) btn.classList.toggle("visible", window.scrollY > 500);
+});
+
+/* ---------- Card Deep Links ---------- */
+/* Every vehicle/badge/tier card is clickable: it copies a direct link
+   (e.g. #vehicles/coupe-gt) and updates the URL, so links can be shared
+   or bookmarked straight to one card. Visiting that link re-opens the
+   right tab, scrolls to the card, and gives it a brief highlight pulse. */
+
+function slugify(str) {
+    return str.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-+|-+$)/g, "");
+}
+
+function makeCardLinkable(card, pageId, name) {
+    card.dataset.slug = slugify(name);
+    card.classList.add("linkable-card");
+    card.addEventListener("click", e => {
+        if (e.target.closest("a, button")) return; // don't hijack real links/buttons inside a card
+        copyCardLink(pageId, card.dataset.slug);
+    });
+}
+
+function copyCardLink(pageId, slug) {
+    const url = `${location.origin}${location.pathname}#${pageId}/${slug}`;
+    const onDone = () => showToast("Link copied!");
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(onDone).catch(() => fallbackCopy(url, onDone));
+    } else {
+        fallbackCopy(url, onDone);
+    }
+    history.replaceState(null, "", `#${pageId}/${slug}`);
+}
+
+function fallbackCopy(text, onDone) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) { /* clipboard unavailable — link is still in the URL bar */ }
+    document.body.removeChild(ta);
+    onDone();
+}
+
+function showToast(message) {
+    let toast = document.getElementById("linkToast");
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "linkToast";
+        toast.className = "toast";
+        document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.remove("show");
+    void toast.offsetWidth; // restart the animation if it's already showing
+    toast.classList.add("show");
+    clearTimeout(showToast._timer);
+    showToast._timer = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+function routeFromHash() {
+    const hash = location.hash.replace(/^#/, "");
+    if (!hash) return;
+
+    const [pageId, slug] = hash.split("/");
+    const tabEl = document.querySelector(`.tab[data-page="${pageId}"]`);
+    if (!tabEl) return;
+    showPage(pageId, tabEl);
+
+    if (slug) {
+        setTimeout(() => {
+            const target = document.querySelector(`#${pageId} [data-slug="${slug}"]`);
+            if (!target) return;
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            target.classList.add("card-highlight");
+            setTimeout(() => target.classList.remove("card-highlight"), 2200);
+        }, 150);
+    }
+}
+
+window.addEventListener("hashchange", routeFromHash);
+
+/* ---------- Mobile Nav ---------- */
+
+function toggleNav() {
+    document.getElementById("navLinks").classList.toggle("open");
+}
+
 /* ---------- Page Navigation ---------- */
 
 function showPage(page, tab) {
@@ -326,10 +471,19 @@ function showPage(page, tab) {
     const next = document.getElementById(page);
     if (next) next.classList.add("active");
 
-    tab.classList.add("active");
+    const activeTab = tab || document.querySelector(`.tab[data-page="${page}"]`);
+    if (activeTab) activeTab.classList.add("active");
+
+    // Close the mobile menu after picking a tab
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks) navLinks.classList.remove("open");
 
     if (page === "vehicles") {
         animateStatBars();
+    }
+
+    if (next) {
+        staggerCards(next.querySelectorAll(".card, .badge-card"));
     }
 }
 
@@ -380,7 +534,30 @@ function filterVehicles() {
         }
     });
 
-    document.getElementById("noResults").style.display = visibleCount === 0 ? "block" : "none";
+    document.getElementById("noResults").style.display = visibleCount === 0 ? "flex" : "none";
+}
+
+/* ---------- Rarity Chip Counts ---------- */
+
+function addRarityChipCounts() {
+    const chips = document.querySelectorAll("#rarityChips .chip");
+    const totalCards = document.querySelectorAll("#vehicleGrid .card").length;
+
+    chips.forEach(chip => {
+        const rarity = chip.dataset.rarity;
+        const count = rarity === "all"
+            ? totalCards
+            : document.querySelectorAll(`#vehicleGrid .card[data-rarity="${rarity}"]`).length;
+
+        const label = chip.querySelector(".chip-label");
+        const existing = chip.querySelector(".chip-count");
+        if (existing) existing.remove();
+
+        const countEl = document.createElement("span");
+        countEl.className = "chip-count";
+        countEl.textContent = `(${count})`;
+        label.after(countEl);
+    });
 }
 
 function setRarityFilter(rarity, chip) {
@@ -420,9 +597,21 @@ document.addEventListener("DOMContentLoaded", () => {
     renderBadges();
     renderTiers();
     applyVehicleTierColors();
+    addRarityChipCounts();
+    buildCategoryJumpNav();
+
+    document.querySelectorAll("#vehicleGrid .card").forEach(card => {
+        const name = card.querySelector("h3").textContent;
+        makeCardLinkable(card, "vehicles", name);
+    });
 
     const activePage = document.querySelector(".page.active");
     if (activePage && activePage.id === "vehicles") {
         animateStatBars();
     }
+    if (activePage) {
+        staggerCards(activePage.querySelectorAll(".card, .badge-card"));
+    }
+
+    routeFromHash();
 });
