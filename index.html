@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stop The Truckery</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30' fill='%23EF4444' stroke='%23F9FAFB' stroke-width='4'/%3E%3Ctext x='50' y='62' font-family='Arial,sans-serif' font-weight='900' font-size='34' fill='%23F9FAFB' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,13 +19,18 @@
   <nav>
     <div class="nav-container">
       <div class="logo">Stop The Truckery</div>
-      <div class="nav-links">
-        <div class="tab active" onclick="showPage('home', this)">Home</div>
-        <div class="tab" onclick="showPage('vehicles', this)">Vehicles</div>
-        <div class="tab" onclick="showPage('badges', this)">Badges</div>
-        <div class="tab" onclick="showPage('tiers', this)">Tiers</div>
-        <div class="tab" onclick="showPage('updates', this)">Updates</div>
-        <div class="tab" onclick="showPage('credits', this)">Credits</div>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <div class="tab active" data-page="home" onclick="showPage('home', this)">🏠 Home</div>
+        <div class="tab" data-page="vehicles" onclick="showPage('vehicles', this)">🚗 Vehicles</div>
+        <div class="tab" data-page="badges" onclick="showPage('badges', this)">🏅 Badges</div>
+        <div class="tab" data-page="tiers" onclick="showPage('tiers', this)">🏆 Tiers</div>
+        <div class="tab" data-page="downloads" onclick="showPage('downloads', this)">⬇️ Downloads</div>
+        <div class="tab" data-page="qa" onclick="showPage('qa', this)">🛠️ QA Testing</div>
+        <div class="tab" data-page="updates" onclick="showPage('updates', this)">📰 Updates</div>
+        <div class="tab" data-page="credits" onclick="showPage('credits', this)">⭐ Credits</div>
       </div>
     </div>
   </nav>
@@ -32,29 +41,40 @@
     <section id="home" class="page active">
       <h1>Welcome to Stop The Truckery</h1>
       <p>Stop The Truckery is a competitive PvP vehicle combat game where you crash into opponents, earn coins, unlock vehicles, collect badges, and climb the leaderboard.</p>
+
+      <div class="card glass glow" style="margin-top:25px;">
+        <h3>Join the Community</h3>
+        <p>Chat with other players, get support, and hear about updates first on Discord.</p>
+        <a class="download-btn" href="https://discord.gg/MTcQgrb7fE" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
     </section>
 
     <!-- ===================== VEHICLES ===================== -->
     <section id="vehicles" class="page">
-      <h2>Vehicles</h2>
+      <h2>🚗 Vehicles</h2>
 
       <div class="toolbar">
-        <input type="text" id="vehicleSearch" class="search-input" placeholder="Search vehicles..." oninput="filterVehicles()">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="vehicleSearch" class="search-input" placeholder="Search vehicles..." oninput="filterVehicles()">
+        </div>
         <div class="filter-chips" id="rarityChips">
-          <div class="chip active" data-rarity="all" onclick="setRarityFilter('all', this)">All</div>
-          <div class="chip rarity-common" data-rarity="common" onclick="setRarityFilter('common', this)">Common</div>
-          <div class="chip rarity-bronze" data-rarity="bronze" onclick="setRarityFilter('bronze', this)">Bronze</div>
-          <div class="chip rarity-copper" data-rarity="copper" onclick="setRarityFilter('copper', this)">Copper</div>
-          <div class="chip rarity-rare" data-rarity="rare" onclick="setRarityFilter('rare', this)">Rare</div>
-          <div class="chip rarity-emerald" data-rarity="emerald" onclick="setRarityFilter('emerald', this)">Emerald</div>
-          <div class="chip rarity-epic" data-rarity="epic" onclick="setRarityFilter('epic', this)">Epic</div>
-          <div class="chip rarity-legendary" data-rarity="legendary" onclick="setRarityFilter('legendary', this)">Legendary</div>
-          <div class="chip rarity-mythic" data-rarity="mythic" onclick="setRarityFilter('mythic', this)">Mythic</div>
-          <div class="chip rarity-diamond" data-rarity="diamond" onclick="setRarityFilter('diamond', this)">Diamond</div>
-          <div class="chip rarity-obsidian" data-rarity="obsidian" onclick="setRarityFilter('obsidian', this)">Obsidian</div>
-          <div class="chip rarity-prismatic" data-rarity="prismatic" onclick="setRarityFilter('prismatic', this)">Prismatic</div>
+          <div class="chip active" data-rarity="all" onclick="setRarityFilter('all', this)"><span class="chip-label">All</span></div>
+          <div class="chip rarity-common" data-rarity="common" onclick="setRarityFilter('common', this)"><span class="chip-label">Common</span></div>
+          <div class="chip rarity-bronze" data-rarity="bronze" onclick="setRarityFilter('bronze', this)"><span class="chip-label">Bronze</span></div>
+          <div class="chip rarity-copper" data-rarity="copper" onclick="setRarityFilter('copper', this)"><span class="chip-label">Copper</span></div>
+          <div class="chip rarity-rare" data-rarity="rare" onclick="setRarityFilter('rare', this)"><span class="chip-label">Rare</span></div>
+          <div class="chip rarity-emerald" data-rarity="emerald" onclick="setRarityFilter('emerald', this)"><span class="chip-label">Emerald</span></div>
+          <div class="chip rarity-epic" data-rarity="epic" onclick="setRarityFilter('epic', this)"><span class="chip-label">Epic</span></div>
+          <div class="chip rarity-legendary" data-rarity="legendary" onclick="setRarityFilter('legendary', this)"><span class="chip-label">Legendary</span></div>
+          <div class="chip rarity-mythic" data-rarity="mythic" onclick="setRarityFilter('mythic', this)"><span class="chip-label">Mythic</span></div>
+          <div class="chip rarity-diamond" data-rarity="diamond" onclick="setRarityFilter('diamond', this)"><span class="chip-label">Diamond</span></div>
+          <div class="chip rarity-obsidian" data-rarity="obsidian" onclick="setRarityFilter('obsidian', this)"><span class="chip-label">Obsidian</span></div>
+          <div class="chip rarity-prismatic" data-rarity="prismatic" onclick="setRarityFilter('prismatic', this)"><span class="chip-label">Prismatic</span></div>
         </div>
       </div>
+
+      <div class="category-jump" id="categoryJump"></div>
 
       <div id="vehicleGrid">
 
@@ -208,9 +228,9 @@
           <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="1.5"></div></div><span class="stat-value">52–63</span></div>
           <p class="price">Price: 4,600 Coins</p>
         </div>
-        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="Microcar">
+        <div class="card glass tier-card rarity-common" data-rarity="common" data-name="city hopper">
           <span class="rarity-tag rarity-common">Common</span>
-          <h3>Microcar</h3>
+          <h3>City Hopper</h3>
           <p class="obtainable">OBTAINABLE</p>
           <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="19.0476"></div></div><span class="stat-value">1.00x</span></div>
           <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="0"></div></div><span class="stat-value">45–55</span></div>
@@ -502,7 +522,7 @@
           <p class="obtainable">OBTAINABLE</p>
           <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="76.1905"></div></div><span class="stat-value">2.20x</span></div>
           <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="9"></div></div><span class="stat-value">80–110</span></div>
-          <p class="price">Price: Not Purchasable</p>
+          <p class="price">Price: N/A</p>
         </div>
         <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="eagle eye helicopter">
           <span class="rarity-tag rarity-prismatic">Prismatic</span>
@@ -510,7 +530,7 @@
           <p class="obtainable">OBTAINABLE</p>
           <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="80.9524"></div></div><span class="stat-value">2.30x</span></div>
           <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="8"></div></div><span class="stat-value">75–105</span></div>
-          <p class="price">Price: Not Purchasable</p>
+          <p class="price">Price: N/A</p>
         </div>
         <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="skyline helicopter">
           <span class="rarity-tag rarity-prismatic">Prismatic</span>
@@ -518,7 +538,7 @@
           <p class="obtainable">OBTAINABLE</p>
           <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="71.4286"></div></div><span class="stat-value">2.10x</span></div>
           <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="10.5"></div></div><span class="stat-value">85–120</span></div>
-          <p class="price">Price: Not Purchasable</p>
+          <p class="price">Price: N/A</p>
         </div>
         <div class="card glass tier-card rarity-prismatic" data-rarity="prismatic" data-name="talon helicopter">
           <span class="rarity-tag rarity-prismatic">Prismatic</span>
@@ -526,7 +546,7 @@
           <p class="obtainable">OBTAINABLE</p>
           <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar"><div class="stat-fill" data-target="85.7143"></div></div><span class="stat-value">2.40x</span></div>
           <div class="stat-row"><span class="stat-label">Coins on Crash</span><div class="stat-bar"><div class="stat-fill" data-target="7"></div></div><span class="stat-value">70–100</span></div>
-          <p class="price">Price: Not Purchasable</p>
+          <p class="price">Price: N/A</p>
         </div>
       </div>
 
@@ -731,28 +751,77 @@
       </div>
       </div>
 
-      <p id="noResults" class="no-results" style="display:none;">No vehicles match your search.</p>
+      <div id="noResults" class="no-results" style="display:none;">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        <p>No vehicles match your search.</p>
+      </div>
     </section>
 
     <!-- ===================== BADGES ===================== -->
     <!-- Badge cards are generated from BADGE_CATEGORIES in script.js -->
     <section id="badges" class="page">
-      <h2>Badges</h2>
+      <h2>🏅 Badges</h2>
       <div class="filter-chips" id="badgeChips"></div>
-      <div id="badgeCategories"></div>
+      <div id="badgeCategories">
+        <div class="badge-grid">
+          <div class="badge-card skeleton"></div>
+          <div class="badge-card skeleton"></div>
+          <div class="badge-card skeleton"></div>
+        </div>
+      </div>
     </section>
 
     <!-- ===================== TIERS ===================== -->
     <!-- Tier cards are generated from BADGE_TIERS in script.js -->
     <section id="tiers" class="page">
-      <h2>Tiers</h2>
+      <h2>🏆 Tiers</h2>
       <p class="section-intro">Every badge belongs to one of 11 tiers. Higher tiers unlock a brighter gradient highlight on the badge itself.</p>
-      <div class="badge-grid" id="tiersGrid"></div>
+      <div class="badge-grid" id="tiersGrid">
+        <div class="badge-card skeleton"></div>
+        <div class="badge-card skeleton"></div>
+        <div class="badge-card skeleton"></div>
+      </div>
+    </section>
+
+    <!-- ===================== DOWNLOADS ===================== -->
+    <section id="downloads" class="page">
+      <h2>⬇️ Downloads</h2>
+
+      <div class="card glass glow">
+        <span class="sale-tag">60% OFF</span>
+        <h3>Stop The Truckery Download</h3>
+        <p>Stop The Truckery is now available on itch.io — grab it there to get the current version.</p>
+        <p class="price-row"><span class="price-old">$5</span><span class="price-new">$2</span></p>
+        <a class="download-btn" href="https://aces22378-dev.itch.io/stop-the-truckery" target="_blank" rel="noopener">Go To Buy</a>
+      </div>
+    </section>
+
+    <!-- ===================== QA TESTING ===================== -->
+    <section id="qa" class="page">
+      <h2>🛠️ QA Testing</h2>
+
+      <div id="qaLocked" class="card glass">
+        <h3>Staff & QA Access Only</h3>
+        <p>This area holds internal test builds. Enter the access password to continue.</p>
+        <div class="toolbar">
+          <input type="password" id="qaPassword" class="search-input" placeholder="Password" onkeydown="if (event.key === 'Enter') checkQaPassword()">
+        </div>
+        <a class="download-btn" onclick="checkQaPassword()">Unlock</a>
+        <p id="qaError" style="color:#EF4444; margin-top:12px; display:none;">Incorrect password.</p>
+      </div>
+
+      <div id="qaUnlocked" class="card glass glow" style="display:none;">
+        <span class="latest-tag">LATEST</span>
+        <h3>STAFF Build - Version 1.20</h3>
+        <p>Internal test build. Do not share outside the team.</p>
+        <a class="download-btn" href="https://github.com/Aces22378-Dev/Stop-The-Truckery/releases/tag/V1.20" target="_blank" rel="noopener">Download Staff Build</a>
+        <a class="download-btn bug-report-btn" href="https://discord.com/channels/1521686458136662076/1526941065557577739" target="_blank" rel="noopener">Report a Bug</a>
+      </div>
     </section>
 
     <!-- ===================== UPDATES ===================== -->
     <section id="updates" class="page">
-      <h2>Updates</h2>
+      <h2>📰 Updates</h2>
 
       <div class="card glass glow coming-soon">
         <span class="coming-soon-tag">ADDED - GAME RELEASE</span>
@@ -778,32 +847,37 @@
       <div class="card glass coming-soon">
         <span class="coming-soon-tag">PLANED</span>
         <h3>Version 1.21 - Clans Update</h3>
-        <p> • Clan tags.<br> • Clan levels.<br> • Weekly clan rewards.<br> • Clan leaderboards.<br> • Clan-only badges. </p>
+        <p> • Clan tags.<br> • Clan levels.<br> • Weekly clan rewards.<br> • Clan leaderboard.<br> • Clan-only badges. <br> • Player levels.<br> • Player level leaderboard.<br> • Daily rewards.</p>
       </div>
     </section>
 
     <!-- ===================== CREDITS ===================== -->
     <section id="credits" class="page">
-      <h2>Credits</h2>
+      <h2>⭐ Credits</h2>
       <div class="credits-grid">
-        <div class="credit-card glass featured glow" style="--role-color:#aaffee">
+        <div class="credit-card glass featured glow" style="--role-color:#700000">
           <h3>Aces (@Aces22378)</h3>
-          <p>Founder - Lead Developer - QA Lead<br>Scripter, Modeler, UI, GFX, VFX, Sound & Music<br>Modeler - Map Assets - Vehicles</p>
+          <p>Founder - Lead Developer - QA Lead<br>Developer Generalist</p>
         </div>
         <div class="credit-card glass featured glow" style="--role-color:#0013e8">
           <h3>Saberwave1938 (@saberwave1938_93132)</h3>
-          <p>Moderator - QA Tester<br>Trail Game Moderator</p>
+          <p>Volenter - Moderator - QA Tester<br>Trail Game Moderator</p>
         </div>
         <div class="credit-card glass featured glow" style="--role-color:#0ea900">
           <h3>Major Major (@captainrex0001_08137)</h3>
-          <p>Discord Server Manager - QA Tester</p>
+          <p>Volenter - Discord Server Manager - QA Tester</p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer>© 2026 Stop The Truckery</footer>
+  <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <footer>
+    © 2026 Stop The Truckery — Created By: Aces
+    <a href="https://discord.gg/MTcQgrb7fE" target="_blank" rel="noopener" class="footer-link">Discord</a>
+  </footer>
 
   <script src="script.js"></script>
 </body>
